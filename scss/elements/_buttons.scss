@@ -1,0 +1,90 @@
+@use "../colors" as *;
+@use "../sizes" as *;
+
+@mixin btn-variation-solid($color, $disabled-color) {
+    background-color: color($color);
+    color: var(--color-background);
+    border: $border-width solid color($color);
+    
+    &.disabled {
+        background-color: color($disabled-color);
+        color: var(--color-background);
+        border: $border-width solid color($disabled-color);
+        cursor: default;
+        
+        &::selection {
+            background-color: var(--color-background);
+            color: color($disabled-color);
+        }
+    }
+    
+    &::selection {
+        background-color: var(--color-background);
+        color: color($color);
+    }
+}
+
+@mixin btn-variation-outline($color, $disabled-color) {
+    background-color: var(--color-background);
+    color: color($color);
+    border: $border-width solid color($color);
+
+    &.disabled {
+        background-color: var(--color-background);
+        color: color($disabled-color);
+        border: $border-width solid color($disabled-color);
+        cursor: default;
+        
+    }
+    
+    &::selection {
+        background-color: color($color);
+        color: var(--color-background);
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: $spacer * 0.75 $spacer;
+    cursor: pointer;
+    font-weight: bold;
+    
+    &.btn-block {
+        display: block;
+        text-align: center;
+    }
+    
+    &.btn-primary {
+        @include btn-variation-solid("primary", "shade");
+    }
+    &.btn-secondary {
+        @include btn-variation-outline("primary", "shade");
+    }
+    &.btn-dark {
+        @include btn-variation-outline("shade", "shade");
+    }
+    &.btn-light {
+        @include btn-variation-outline("light", "shade");
+    }
+    &.btn-link {
+        text-decoration: underline;
+        color: color("primary");
+        
+        &.disabled {
+            color: color("shade");
+        }
+    }
+    &.btn-success {
+        @include btn-variation-solid("success", "shade");
+    }
+    &.btn-info {
+        @include btn-variation-solid("info", "shade");
+    }
+    &.btn-warning {
+        @include btn-variation-solid("warning", "shade");
+    }
+    &.btn-danger {
+        @include btn-variation-solid("danger", "shade");
+    }
+}
+

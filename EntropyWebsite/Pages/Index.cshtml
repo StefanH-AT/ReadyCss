@@ -1,0 +1,99 @@
+﻿@page
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="w-lg-50 w-md-75">
+    <h1 class="display-4 mb-0">Entropy CSS</h1>
+    <p>My epic css framework</p>
+    
+    <label for="theme-select">Select theme</label>
+    <select id="theme-select" class="w-auto">
+        <option>Light</option>
+        <option>Dark</option>
+        <option>Use System Preference</option>
+    </select>
+    
+    <hr/>
+    
+    <h2>Buttons</h2>
+    
+    <div class="row">
+        
+        <div class="col-md">
+            <a class="btn btn-block btn-primary">Primary</a>
+            <a class="btn btn-block btn-secondary">Secondary</a>
+            <a class="btn btn-block btn-dark">Dark</a>
+            <a class="btn btn-block btn-light">Light</a>
+            <a class="btn btn-block btn-link">Link</a>
+            <a class="btn btn-block btn-success">Success</a>
+            <a class="btn btn-block btn-info">Info</a>
+            <a class="btn btn-block btn-warning">Warning</a>
+            <a class="btn btn-block btn-danger">Danger</a>
+        </div>
+        
+        <div class="col-md">
+            <a class="btn btn-block disabled btn-primary">Primary</a>
+            <a class="btn btn-block disabled btn-secondary">Secondary</a>
+            <a class="btn btn-block disabled btn-dark">Dark</a>
+            <a class="btn btn-block disabled btn-light">Light</a>
+            <a class="btn btn-block disabled btn-link">Link</a>
+            <a class="btn btn-block disabled btn-success">Success</a>
+            <a class="btn btn-block disabled btn-info">Info</a>
+            <a class="btn btn-block disabled btn-warning">Warning</a>
+            <a class="btn btn-block disabled btn-danger">Danger</a>
+        </div>
+        
+    </div>
+    
+    <pre>
+<code class="hljs html language-html">&lt;a class="btn btn-primary"&gt;Primary&lt;/a&gt;
+&lt;a class="btn btn-secondary"&gt;Secondary&lt;/a&gt;
+&lt;a class="btn btn-dark"&gt;Dark&lt;/a&gt;
+&lt;a class="btn btn-light"&gt;Light&lt;/a&gt;
+&lt;a class="btn btn-success"&gt;Success&lt;/a&gt;
+&lt;a class="btn btn-info"&gt;Info&lt;/a>
+&lt;a class="btn btn-warning"&gt;Warning&lt;/a&gt;
+&lt;a class="btn btn-danger"&gt;Danger&lt;/a&gt;</code>
+    </pre>
+    
+    <p>This is <code>inline code</code> inside a paragraph</p>
+    
+    <h2>Input</h2>
+    
+    <div class="row">
+        <div class="col-md">
+            <input type="text" class="form-control mb-2" placeholder="Text Input Placeholder"/>
+            <input type="text" class="form-control mb-2" value="Disabled Text Input Content"/>
+        </div>
+        <div class="col-md">
+            <input type="text" disabled class="form-control mb-2" placeholder="Disabled Text Input Placeholder"/>
+            <input type="text" disabled class="form-control mb-2" value="Disabled Text Input Content"/>
+        </div>
+    </div>
+    
+    <h2>Checkboxes</h2>
+    
+    <div class="row">
+        <div class="col-md">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+            </div>
+        </div>
+        <div class="col-md">
+            
+        </div>
+    </div>
+    
+</div>
+
+<div class="bg-primary">
+    <h1>Primary!</h1>
+    <p>This is a section with primary background</p>
+</div>
+
+<div class="bg-success">
+    <h1>Success!</h1>
+    <p>This is a section with success background</p>
+</div>

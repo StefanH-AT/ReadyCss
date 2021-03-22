@@ -1,0 +1,24 @@
+@use "../typography" as *;
+@use "../sizes" as *;
+
+:root {
+    --code-border: #{$border-width} solid var(--color-border);
+    --code-padding: #{$spacer} / 4 #{$spacer} / 4;
+}
+
+code {
+    border: var(--code-border);
+    padding: var(--code-padding);
+    display: inline-block;
+    
+    pre > & {
+        padding:  $spacer / 2 $spacer;
+        border-left-width: $border-width * 4;
+        font-family: var(--font-family-monospace);
+        word-break: normal;
+        
+        // Jetbrains recommended settings
+        line-height: 1.2;
+        font-size: 16px;
+    }
+}

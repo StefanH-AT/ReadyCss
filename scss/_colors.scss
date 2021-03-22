@@ -1,0 +1,88 @@
+@use "sass:map";
+
+$colors: (
+    "primary": #b92f2f,
+    "info": #1894d2,
+    "success": #3CA100,
+    "warning": #F3D24A,
+    "danger": #ff7b02,
+    "dark": #202020,
+    "shade": #404040,
+    "light": #d0d0d0,
+    "white": #ffffff
+);
+
+$palette: ();
+
+:root {
+  @each $color-name, $color-value in $colors {
+    --color-#{$color-name}: #{$color-value};
+  }
+}
+
+@each $color-name, $color-value in $colors {
+  $palette: map.set($palette, $color-name, var(--color-#{$color-name}));
+}
+
+@each $color-name, $color-value in $palette {
+  .bg-#{$color-name} {
+    background-color: $color-value;
+    color: var(--color-background);
+    
+    ::selection {
+      background-color: var(--color-background);
+      color: $color-value;
+    }    
+    
+    h1,h2,h3,h4,h5,h6 {
+      color: var(--color-background);
+    }
+  }
+  
+  .text-color-#{$color-name} {
+    color: $color-value;
+  }
+}
+
+@function color($color-name) {
+  @return #{map.get($palette, $color-name)};
+}
+
+// ========================================== Theme ==========================================
+
+@mixin theme-light() {
+  --color-background: #{map.get($palette, "white")};
+  --color-foreground: #{map.get($palette, "dark")};
+  --color-border: #{map.get($palette, "light")};
+}
+
+@mixin theme-dark() {
+  --color-background: #{map.get($palette, "dark")};
+  --color-foreground: #{map.get($palette, "light")};
+  --color-border: #{map.get($palette, "shade")};
+}
+:root {
+  @media (prefers-color-scheme: light) {
+    .theme-system {
+      @include theme-light();
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .theme-system {
+      @include theme-dark();
+    }
+  }
+}
+
+.theme-dark {
+  @include theme-dark();
+}
+
+.theme-light {
+  @include theme-light();
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}

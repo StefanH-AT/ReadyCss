@@ -1,0 +1,37 @@
+@use "breakpoints" as *;
+
+$spacer: 1rem !default;
+$border-width: 2px !default;
+
+$sizer-percentages: (
+    25: 25%,
+    33: 33.33%,
+    50: 50%,
+    66: 66.66%,
+    75: 75%,
+    100: 100%,
+);
+
+@each $s-name, $s-value in $sizer-percentages {
+    .w-#{$s-name} {
+        width: $s-value;
+    }
+    .h-#{$s-name} {
+        height: $s-value;
+    }
+}
+
+@each $br-name, $br-value in $breakpoints {
+    @each $s-name, $s-value in $sizer-percentages {
+        .w-#{$br-name}-#{$s-name} {
+            @include wider-than($br-value) {
+                width: $s-value;
+            }
+        }
+        .h-#{$br-name}-#{$s-name} {
+            @include wider-than($br-value) {
+                height: $s-value;
+            }
+        }
+    }
+}
