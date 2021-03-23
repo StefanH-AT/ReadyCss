@@ -1,0 +1,37 @@
+@use "breakpoints-h" as *;
+
+// Header for grid system
+
+$column-count: 12;
+
+@mixin column($col-span: null, $br-name: null, $br-val: null) { 
+  
+  $col-name: null;
+  @if $col-span == null {
+    $col-name: "";
+    $col-span: 0;
+  } @else {
+    $col-name: "-#{$col-span}";
+  }
+  
+  @if $br-name == null or $br-val == null {
+    .col#{$col-name} {
+      @include column-property($col-span);
+    }
+  } @else {
+    @include wider-than($br-val) {
+      .col-#{$br-name}#{$col-name} {
+        @include column-property($col-span);
+      }
+    }
+  }
+    
+}
+
+@mixin column-property($col-span) {
+  @if $col-span == 12 { // Used to mitigate zero division
+    flex: 1 0 100%;
+  } @else {
+    flex: 1 0 (100% / (12 - $col-span));
+  }
+}
