@@ -1,10 +1,6 @@
-@use "../typography" as *;
-@use "../sizes" as *;
-
-:root {
-    --code-border: #{$border-width} solid var(--color-border);
-    --code-padding: #{$spacer} / 4 #{$spacer} / 4;
-}
+@use "../typography-h" as *;
+@use "../sizes-h" as *;
+@use "code-h" as *;
 
 code {
     border: var(--code-border);

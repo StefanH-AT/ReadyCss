@@ -1,0 +1,24 @@
+@use "sass:map";
+
+// Header for colors. @use this in other files instead of _colors.scss!
+
+$colors: (
+        "primary": #b92f2f,
+        "info": #1894d2,
+        "success": #3CA100,
+        "warning": #F3D24A,
+        "danger": #ff7b02,
+        "dark": #202020,
+        "shade": #404040,
+        "light": #d0d0d0,
+        "white": #ffffff
+);
+
+$palette: ();
+@each $color-name, $color-value in $colors {
+  $palette: map.set($palette, $color-name, var(--color-#{$color-name}));
+}
+
+@function color($color-name) {
+  @return #{map.get($palette, $color-name)};
+}

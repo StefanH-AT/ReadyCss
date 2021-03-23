@@ -1,16 +1,6 @@
-@use "breakpoints" as *;
+@use "breakpoints-h" as *;
 
-$spacer: 1rem !default;
-$border-width: 2px !default;
-
-$sizer-percentages: (
-    25: 25%,
-    33: 33.33%,
-    50: 50%,
-    66: 66.66%,
-    75: 75%,
-    100: 100%,
-);
+@use "sizes-h" as *;
 
 @each $s-name, $s-value in $sizer-percentages {
     .w-#{$s-name} {

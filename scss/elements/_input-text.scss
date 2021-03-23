@@ -1,12 +1,7 @@
-@use "../colors" as *;
-@use "../sizes" as *;
-@use "../typography" as *;
-
-:root {
-    --input-text-border-width: #{$border-width};
-    --input-text-border-color: var(--color-border);
-    --input-text-border-focus-color: var(--color-primary);
-}
+@use "../colors-h" as *;
+@use "../typography-h" as *;
+@use "../sizes-h" as *;
+@use "input-text-h" as *;
 
 input[type=text] {
     display: block;

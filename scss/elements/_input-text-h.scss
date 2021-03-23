@@ -1,0 +1,9 @@
+@use "../sizes-h" as *;
+
+// Header for text input fields
+
+:root {
+  --input-text-border-width: #{$border-width};
+  --input-text-border-color: var(--color-border);
+  --input-text-border-focus-color: var(--color-primary);
+}

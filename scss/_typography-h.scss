@@ -1,0 +1,13 @@
+
+// Header for all things typography
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+:root {
+  --font-family-normal: "Poppins", sans-serif;
+  --font-family-monospace: 'JetBrains Mono', monospace;
+  --font-size: 1.2rem;
+
+  --heading-color: var(--color-primary);
+}

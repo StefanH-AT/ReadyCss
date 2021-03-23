@@ -1,47 +1,6 @@
-@use "../colors" as *;
-@use "../sizes" as *;
-
-@mixin btn-variation-solid($color, $disabled-color) {
-    background-color: color($color);
-    color: var(--color-background);
-    border: $border-width solid color($color);
-    
-    &.disabled {
-        background-color: color($disabled-color);
-        color: var(--color-background);
-        border: $border-width solid color($disabled-color);
-        cursor: default;
-        
-        &::selection {
-            background-color: var(--color-background);
-            color: color($disabled-color);
-        }
-    }
-    
-    &::selection {
-        background-color: var(--color-background);
-        color: color($color);
-    }
-}
-
-@mixin btn-variation-outline($color, $disabled-color) {
-    background-color: var(--color-background);
-    color: color($color);
-    border: $border-width solid color($color);
-
-    &.disabled {
-        background-color: var(--color-background);
-        color: color($disabled-color);
-        border: $border-width solid color($disabled-color);
-        cursor: default;
-        
-    }
-    
-    &::selection {
-        background-color: color($color);
-        color: var(--color-background);
-    }
-}
+@use "../colors-h" as *;
+@use "../sizes-h" as *;
+@use "buttons-h" as *;
 
 .btn {
     display: inline-block;

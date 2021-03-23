@@ -1,0 +1,8 @@
+@use "../sizes-h" as *;
+
+// Header for code blocks
+
+:root {
+  --code-border: #{$border-width} solid var(--color-border);
+  --code-padding: #{$spacer} / 4 #{$spacer} / 4;
+}
