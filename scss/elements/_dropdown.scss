@@ -1,0 +1,42 @@
+@use "../sizes-h" as *;
+
+.dropdown {
+  display: inline-block;
+  background-color: var(--scheme-shade);
+  padding: $spacer;
+
+  > li {
+    user-select: none;
+    cursor: pointer;
+    
+    // The first li
+    &:first-child {
+      border-bottom: $border-width solid var(--color-primary);
+    }
+    
+    // Not the first li
+    &+ li {
+      visibility: hidden;
+      height: 0;
+    }
+  }
+  
+  // Hovered state
+  &:hover {
+    > li {
+      
+      // The first li
+      &:first-child {
+        border-bottom: none;
+      }
+      
+      // Not the first li
+      &+ li {
+        visibility: visible;
+        height: initial;
+        
+        margin-top: $spacer * 0.5;
+      }
+    }
+  }
+}
