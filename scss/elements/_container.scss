@@ -1,0 +1,14 @@
+
+@use "../breakpoints-h" as *;
+@use "container-h" as *;
+
+.container {
+  margin: 0 auto;
+  max-width: var(--container-fallback-width);
+  
+  @each $br-name, $br-val in $breakpoints {
+    @include wider-than($br-val) {
+      max-width: var(--container-#{$br-name}-width);
+    }
+  }
+}
