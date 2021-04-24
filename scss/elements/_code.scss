@@ -9,14 +9,20 @@ code {
     padding: var(--code-padding);
     display: inline-block;
     
+    // Jetbrains recommended settings for jetbrains mono font
+    font-family: var(--font-family-monospace);
+    line-height: 1.2;
+    font-size: 16px;
+    
     pre > & {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        
         padding:  $spacer / 2 $spacer;
         border-left-width: $border-width * 4;
-        font-family: var(--font-family-monospace);
         word-break: normal;
+        overflow-x: auto;
         
-        // Jetbrains recommended settings
-        line-height: 1.2;
-        font-size: 16px;
     }
 }
