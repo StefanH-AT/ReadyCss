@@ -14,6 +14,8 @@ $sizer-percentages: (
 );
 
 $spaces: (
+    0: 0,
+    auto: auto,
     1: $spacer,
     2: $spacer * 2,
     3: $spacer * 3,
