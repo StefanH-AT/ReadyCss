@@ -1,49 +1,98 @@
 @use "../colors-h" as *;
 @use "../sizes-h" as *;
-@use "buttons-h" as *;
 
 .btn {
+    /* Color settings */
+    --btn-color: var(--scheme-shade);
+    --btn-bg: var(--btn-color);
+    --btn-text-color: var(--scheme-background);
+    
+    /* Size settings */
+    --btn-border-width: #{$border-width};
+    --btn-font-size: calc(var(--font-size) * 0.75);
+    --btn-outline-width: var(--btn-border-width);
+    --btn-outline-offset: var(--btn-outline-width);
+    
+    /* Apply colors */
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    border: solid var(--btn-color) var(--btn-border-width);
+    
+    /* Apply styling */
     display: inline-block;
-    padding: $spacer * 0.75 $spacer;
+    padding: $spacer * 0.75 $spacer * 1.5;
+    margin: $border-width * 2;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: normal;
+    font-size: var(--btn-font-size);
+    text-decoration: none;
+    user-select: none;
     
-    &.btn-block {
-        display: block;
-        text-align: center;
-    }
-    
-    &.btn-primary {
-        @include btn-variation-solid("primary", "shade");
-    }
-    &.btn-secondary {
-        @include btn-variation-outline("primary", "shade");
-    }
-    &.btn-dark {
-        @include btn-variation-outline("shade", "shade");
-    }
-    &.btn-light {
-        @include btn-variation-outline("light", "shade");
-    }
-    &.btn-link {
-        text-decoration: underline;
-        color: color("primary");
+    &:focus {
+        outline: var(--btn-outline-width) solid;
+        outline-color: var(--btn-bg);
         
-        &.disabled {
-            color: color("shade");
+        outline-offset: var(--btn-outline-offset);
+    }
+
+    &::selection {
+        background-color: var(--btn-color);
+        color: var(--btn-bg);
+    }
+
+    &.disabled {
+        //--btn-color: var(--scheme-shade);
+        //--btn-text-color: var(--scheme-background);
+        cursor: default;
+        opacity: 0.5;
+        
+        &::selection {
+            //background-color: var(--color-background);
+            //color: var
         }
     }
-    &.btn-success {
-        @include btn-variation-solid("success", "shade");
+
+    // ================
+    // Color variations
+    // ================
+        
+    &.btn-main {
+        --btn-color: var(--color-main);
     }
-    &.btn-info {
-        @include btn-variation-solid("info", "shade");
+
+    &.btn-accent {
+        --btn-color: var(--color-accent);
     }
-    &.btn-warning {
-        @include btn-variation-solid("warning", "shade");
+    
+    // ================
+    // Style variations
+    // ================
+    
+    &.btn-outline {
+        --btn-text-color: var(--btn-color);
+        background-color: transparent;
     }
-    &.btn-danger {
-        @include btn-variation-solid("danger", "shade");
+    
+    &.btn-popout:not(.btn-shadow, :focus) {
+        box-shadow:
+                $border-width $border-width 0 0 var(--scheme-background),
+                $border-width * 2 $border-width * 2 0 0 var(--btn-color);
+        
+    }
+    
+    &.btn-shadow:not(.btn-popout) {
+        --btn-shadow-color: var(--scheme-shadier);
+        --btn-shadow-offset: calc(var(--btn-border-width) * 2);
+        box-shadow: var(--btn-shadow-offset) var(--btn-shadow-offset) 0 0 var(--btn-shadow-color);
+        
+        &:focus {
+            box-shadow: 0 0 0 var(--btn-shadow-offset) var(--btn-shadow-color);
+            outline: none;
+        }
+        
+        &.btn-outline {
+            --btn-shadow-color: var(--btn-color);
+        }
     }
 }
 
