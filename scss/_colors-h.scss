@@ -3,22 +3,37 @@
 // Header for colors. @use this in other files instead of _colors.scss!
 
 $colors: (
-        "primary": #b92f2f,
-        "info": #1894d2,
-        "success": #3CA100,
-        "warning": #F3D24A,
-        "danger": #ff7b02,
-        "dark": #202020,
-        "shade": #404040,
-        "light": #d0d0d0,
-        "white": #ffffff
+        "main": #45DB2E,
+        "accent": #DB2EA6,
+        "darkest": #101010,
+        "darker": #232323,
+        "dark": #404040,
+        "middle": #767676,
+        "light": #a0a0a0,
+        "lighter": #d0d0d0,
+        "lightest": #ffffff
 );
 
-$palette: ();
+$palette: (
+  "bg": var(--scheme-background),
+  "fg": var(--scheme-foreground),
+  "shade": var(--scheme-shade),
+  "shadier": var(--scheme-shadier)
+);
 @each $color-name, $color-value in $colors {
   $palette: map.set($palette, $color-name, var(--color-#{$color-name}));
 }
 
-@function color($color-name) {
-  @return #{map.get($palette, $color-name)};
+@mixin theme-light() {
+  --scheme-background: var(--color-lightest);
+  --scheme-foreground: var(--color-darkest);
+  --scheme-shade: var(--color-light);
+  --scheme-shadier: var(--color-lighter);
+}
+
+@mixin theme-dark() {
+  --scheme-background: var(--color-darkest);
+  --scheme-foreground: var(--color-lightest);
+  --scheme-shade: var(--color-dark);
+  --scheme-shadier: var(--color-darker);
 }

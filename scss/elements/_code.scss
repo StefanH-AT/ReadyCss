@@ -3,7 +3,9 @@
 @use "code-h" as *;
 
 code {
-    border: var(--code-border);
+    border: solid $border-width;
+    border-color: var(--scheme-shade);
+    
     padding: var(--code-padding);
     display: inline-block;
     

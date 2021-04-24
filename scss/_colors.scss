@@ -10,15 +10,19 @@
 @each $color-name, $color-value in $palette {
   .bg-#{$color-name} {
     background-color: $color-value;
-    color: var(--color-background);
+    $bg: var(--scheme-background);
+    @if $color-name == "bg" {
+      $bg: var(--scheme-foreground);
+    }
+    color: $bg;
     
     ::selection {
-      background-color: var(--color-background);
+      background-color: $bg;
       color: $color-value;
     }    
     
     h1,h2,h3,h4,h5,h6 {
-      color: var(--color-background);
+      color: $bg;
     }
   }
   
@@ -29,18 +33,8 @@
 
 // ========================================== Theme ==========================================
 
-@mixin theme-light() {
-  --color-background: #{map.get($palette, "white")};
-  --color-foreground: #{map.get($palette, "dark")};
-  --color-border: #{map.get($palette, "light")};
-}
-
-@mixin theme-dark() {
-  --color-background: #{map.get($palette, "dark")};
-  --color-foreground: #{map.get($palette, "light")};
-  --color-border: #{map.get($palette, "shade")};
-}
 :root {
+  @include theme-light();
   @media (prefers-color-scheme: light) {
     .theme-system {
       @include theme-light();
@@ -62,6 +56,6 @@
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: var(--scheme-background);
+  color: var(--scheme-foreground);
 }

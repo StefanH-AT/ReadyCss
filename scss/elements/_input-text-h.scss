@@ -4,6 +4,6 @@
 
 :root {
   --input-text-border-width: #{$border-width};
-  --input-text-border-color: var(--color-border);
+  --input-text-border-color: var(--scheme-shade);
   --input-text-border-focus-color: var(--color-primary);
 }
