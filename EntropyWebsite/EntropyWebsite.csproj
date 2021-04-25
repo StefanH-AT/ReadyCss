@@ -8,4 +8,10 @@
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\scss\**\*.*">
+        <Link>scss\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      </Content>
+    </ItemGroup>
+
 </Project>
