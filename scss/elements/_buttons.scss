@@ -3,15 +3,17 @@
 
 .btn {
     /* Color settings */
-    --btn-color: var(--scheme-shade);
+    --btn-color: var(--scheme-foreground);
     --btn-bg: var(--btn-color);
     --btn-text-color: var(--scheme-background);
     
     /* Size settings */
-    --btn-border-width: #{$border-width};
+    --btn-border-width: var(--border-width);
     --btn-font-size: calc(var(--font-size) * 0.75);
     --btn-outline-width: var(--btn-border-width);
     --btn-outline-offset: var(--btn-outline-width);
+    --btn-padding-vertical: calc(var(--spacer) * 0.75);
+    --btn-padding-horizontal: calc(var(--spacer) * 1.5);
     
     /* Apply colors */
     background-color: var(--btn-color);
@@ -20,8 +22,8 @@
     
     /* Apply styling */
     display: inline-block;
-    padding: $spacer * 0.75 $spacer * 1.5;
-    margin: $border-width * 2;
+    padding: var(--btn-padding-vertical) var(--btn-padding-horizontal) ;
+    margin: calc(var(--btn-border-width) * 2);
     cursor: pointer;
     font-weight: normal;
     font-size: var(--btn-font-size);
@@ -74,9 +76,11 @@
     }
     
     &.btn-popout:not(.btn-shadow, :focus) {
+        --btn-popout-offset: var(--btn-border-width);
+        --btn-popout-thickness: var(--btn-border-width);
         box-shadow:
-                $border-width $border-width 0 0 var(--scheme-background),
-                $border-width * 2 $border-width * 2 0 0 var(--btn-color);
+                var(--btn-popout-offset) var(--btn-popout-offset) 0 0 var(--scheme-background),
+                calc(var(--btn-popout-offset) + var(--btn-popout-thickness)) calc(var(--btn-popout-offset) + var(--btn-popout-thickness)) 0 0 var(--btn-color);
         
     }
     
