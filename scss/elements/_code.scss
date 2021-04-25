@@ -1,9 +1,10 @@
 @use "../typography-h" as *;
 @use "../sizes-h" as *;
-@use "code-h" as *;
 
 code {
-    border: solid $border-width;
+    --code-padding: calc(var(--spacer) * 0.25);
+    
+    border: solid var(--border-width);
     border-color: var(--scheme-shade);
     
     padding: var(--code-padding);
@@ -19,8 +20,8 @@ code {
         box-sizing: border-box;
         width: 100%;
         
-        padding:  $spacer / 2 $spacer;
-        border-left-width: $border-width * 4;
+        padding:  calc(var(--spacer) / 2) var(--spacer);
+        border-left-width: calc(var(--border-width) * 4);
         word-break: normal;
         overflow-x: auto;
         
