@@ -1,21 +1,33 @@
 @use "../colors-h" as *;
 @use "../typography-h" as *;
 @use "../sizes-h" as *;
-@use "input-text-h" as *;
 
-input[type=text] {
-    display: block;
-    width: 100%;
-    padding: $spacer / 2;
+input[type=text].input-text,
+textarea.input-text {
+    
+    --input-text-padding: calc(var(--spacer) * 0.5);
+    --input-text-border-width: var(--border-width);
+    --input-text-border-color: var(--scheme-shade);
+    --input-text-min-character-width: 40ch;
+    
+    display: inline-block;
+    
+    padding: var(--input-text-padding);
     background-color: var(--scheme-background);
     color: var(--scheme-foreground);
     
     font-size: var(--font-size);
     
-    border: $border-width var(--input-text-border-color) solid;
+    border: var(--input-text-border-width) var(--input-text-border-color) solid;
     
     &:focus {
         outline: none;
-        border-bottom-color: var(--input-text-border-focus-color);
     }
+    
+    // ===== Textarea =====
+    
+    max-width: 100%; // Keep resizing in-bounds
+    max-height: 100%;
+    min-height: auto;
+    min-width: var(--input-text-min-character-width);
 }
