@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntropyWebsite", "EntropyWebsite\EntropyWebsite.csproj", "{94A7ADB3-F23C-4A59-8BF4-6BB87AB37223}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyCssWebsite", "ReadyCssWebsite\ReadyCssWebsite.csproj", "{94A7ADB3-F23C-4A59-8BF4-6BB87AB37223}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
