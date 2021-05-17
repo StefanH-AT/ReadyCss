@@ -1,12 +1,12 @@
 @use "../colors-h" as *;
 @use "../sizes-h" as *;
 
-.btn {
+:root {
     /* Color settings */
     --btn-color: var(--scheme-foreground);
     --btn-bg: var(--btn-color);
     --btn-text-color: var(--scheme-background);
-    
+
     /* Size settings */
     --btn-border-width: var(--border-width);
     --btn-font-size: calc(var(--font-size) * 0.75);
@@ -14,7 +14,9 @@
     --btn-outline-offset: var(--btn-outline-width);
     --btn-padding-vertical: calc(var(--spacer) * 0.75);
     --btn-padding-horizontal: calc(var(--spacer) * 1.5);
-    
+}
+
+.btn {
     /* Apply colors */
     background-color: var(--btn-color);
     color: var(--btn-text-color);

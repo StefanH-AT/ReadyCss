@@ -1,9 +1,11 @@
 @use "../typography-h" as *;
 @use "../sizes-h" as *;
 
-code {
+:root {
     --code-padding: calc(var(--spacer) * 0.25);
-    
+}
+
+code {    
     border: solid var(--border-width);
     border-color: var(--scheme-shade);
     

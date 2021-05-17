@@ -1,13 +1,12 @@
 @use "../sizes-h" as *;
 
 :root {
-    --input-radio-size: calc(var(--spacer) * 1.5);
+    --input-radio-size: var(--spacer);
+    --input-radio-border-size: calc(var(--border-width) * 2);
+    --input-radio-color: var(--color-main);
 }
 
 input[type=radio].input-radio {
-    
-    --input-radio-color: var(--color-main);
-    
     appearance: none;
     vertical-align: middle;
     
@@ -18,19 +17,22 @@ input[type=radio].input-radio {
         content: '';
         display: inline-block;
         position: absolute;
-        left: calc(var(--input-radio-size) * 0.333);
-        top: calc(var(--input-radio-size) * -0.1666);
+
+        user-select: none;
         
-        width: calc(var(--input-radio-size) / 3);
-        height: calc(var(--input-radio-size) / 3);
+        left: var(--input-radio-border-size);
+        top: calc(var(--input-radio-size) * -0.5 + var(--input-radio-border-size) * 0.5);
+        
+        width: calc(var(--input-radio-size) - var(--input-radio-border-size) * 2);
+        height: calc(var(--input-radio-size) - var(--input-radio-border-size) * 2);
         
         background-color: var(--scheme-background);
         border-radius: 100%;
         cursor: pointer;
         
         box-shadow: 
-            0 0 0 calc(var(--input-radio-size) * 0.1666) var(--scheme-background),
-            0 0 0 calc(var(--input-radio-size) * 0.333) var(--input-radio-color);
+            0 0 0 var(--input-radio-border-size) var(--scheme-background),
+            0 0 0 calc(var(--input-radio-border-size) * 2) var(--input-radio-color);
     }
     &:checked::before {
         background-color: var(--input-radio-color);
@@ -54,6 +56,11 @@ input[type=radio].input-radio {
         
         cursor: pointer;
     }
-    
+    &.input-main {
+        --input-radio-color: var(--color-main);
+    }
+    &.input-accent {
+        --input-radio-color: var(--color-accent);
+    }
     
 }

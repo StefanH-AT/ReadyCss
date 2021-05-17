@@ -2,15 +2,17 @@
 @use "../typography-h" as *;
 @use "../sizes-h" as *;
 
-input[type=text].input-text,
-textarea.input-text {
-    
+:root {
     --input-text-padding: calc(var(--spacer) * 0.5);
     --input-text-border-width: var(--border-width);
     --input-text-border-color: var(--scheme-shade);
     --input-text-min-character-width: 40ch;
-    
+}
+
+input[type=text].input-text,
+textarea.input-text {
     display: inline-block;
+    position: relative;
     
     padding: var(--input-text-padding);
     background-color: var(--scheme-background);
@@ -30,4 +32,28 @@ textarea.input-text {
     max-height: 100%;
     min-height: auto;
     min-width: var(--input-text-min-character-width);
+    
+    &.input-text-underline {
+        border-color: transparent;
+        border-bottom-color: var(--input-text-border-color);
+    }
+    
+}
+
+
+.input-text-shift {
+    position: relative;
+
+    &::after {
+        
+        content: attr(data-placeholder);
+
+        font-size: var(--font-size);
+        color: var(--scheme-shade);
+        
+        position: absolute;
+        left: 0;
+        top: 25%;
+    }
+
 }
