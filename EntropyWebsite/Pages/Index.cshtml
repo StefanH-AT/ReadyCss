@@ -13,54 +13,31 @@
 <div class="row">
         
     <div class="col-md">
-        <a class="btn btn-block btn-primary" href="#">Primary</a>
-        <a class="btn btn-block btn-secondary" href="#">Secondary</a>
-        <a class="btn btn-block btn-dark" href="#">Dark</a>
-        <a class="btn btn-block btn-light" href="#">Light</a>
-        <a class="btn btn-block btn-link" href="#">Link</a>
-        <a class="btn btn-block btn-success" href="#">Success</a>
-        <a class="btn btn-block btn-info" href="#">Info</a>
-        <a class="btn btn-block btn-warning" href="#">Warning</a>
-        <a class="btn btn-block btn-danger" href="#">Danger</a>
+        <a class="btn" href="#">Default</a>
+        <a class="btn btn-main" href="#">Main</a>
+        <a class="btn btn-accent" href="#">Accent</a>
     </div>
         
     <div class="col-md">
-        <a class="btn btn-block disabled btn-primary">Primary</a>
-        <a class="btn btn-block disabled btn-secondary">Secondary</a>
-        <a class="btn btn-block disabled btn-dark">Dark</a>
-        <a class="btn btn-block disabled btn-light">Light</a>
-        <a class="btn btn-block disabled btn-link">Link</a>
-        <a class="btn btn-block disabled btn-success">Success</a>
-        <a class="btn btn-block disabled btn-info">Info</a>
-        <a class="btn btn-block disabled btn-warning">Warning</a>
-        <a class="btn btn-block disabled btn-danger">Danger</a>
+        <a class="btn disabled" href="#">Default</a>
+        <a class="btn disabled btn-main" href="#">Main</a>
+        <a class="btn disabled btn-accent" href="#">Accent</a>
     </div>
         
 </div>
-    
-<pre>
-<code class="hljs html language-html">&lt;a class="btn btn-primary"&gt;Primary&lt;/a&gt;
-&lt;a class="btn btn-secondary"&gt;Secondary&lt;/a&gt;
-&lt;a class="btn btn-dark"&gt;Dark&lt;/a&gt;
-&lt;a class="btn btn-light"&gt;Light&lt;/a&gt;
-&lt;a class="btn btn-success"&gt;Success&lt;/a&gt;
-&lt;a class="btn btn-info"&gt;Info&lt;/a>
-&lt;a class="btn btn-warning"&gt;Warning&lt;/a&gt;
-&lt;a class="btn btn-danger"&gt;Danger&lt;/a&gt;</code>
-    </pre>
-    
+
 <p>This is <code>inline code</code> inside a paragraph</p>
     
 <h2>Input</h2>
     
 <div class="row">
     <div class="col-md">
-        <input type="text" class="form-control mb-2" placeholder="Text Input Placeholder"/>
-        <input type="text" class="form-control mb-2" value="Disabled Text Input Content"/>
+        <input type="text" class="input-text mb-2" placeholder="Text Input Placeholder"/>
+        <input type="text" class="input-text mb-2" value="Disabled Text Input Content"/>
     </div>
     <div class="col-md">
-        <input type="text" disabled class="form-control mb-2" placeholder="Disabled Text Input Placeholder"/>
-        <input type="text" disabled class="form-control mb-2" value="Disabled Text Input Content"/>
+        <input type="text" disabled class="input-text mb-2" placeholder="Disabled Text Input Placeholder"/>
+        <input type="text" disabled class="input-text mb-2" value="Disabled Text Input Content"/>
     </div>
 </div>
     
@@ -68,23 +45,42 @@
     
 <div class="row">
     <div class="col-md">
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+        <div class="mb-05">
+            <input type="checkbox" class="input-check" id="customCheck1">
+            <label for="customCheck1">Check 1</label>
+        </div>
+        <div class="mb-05">
+            <input type="checkbox" class="input-check" id="customCheck2">
+            <label for="customCheck2">Check 2</label>
+        </div>
+        <div class="mb-05">
+            <input type="checkbox" class="input-check" id="customCheck3">
+            <label for="customCheck3">Check 3</label>
         </div>
     </div>
     <div class="col-md">
-            
+        <div class="mb-05">
+            <input type="radio" class="input-radio" name="radioGroup" id="customRadio1">
+            <label for="customRadio1">Radio 1</label>
+        </div>
+        <div class="mb-05">
+            <input type="radio" class="input-radio" name="radioGroup" id="customRadio2">
+            <label for="customRadio2">Radio 2</label>
+        </div>
+        <div class="mb-05">
+            <input type="radio" class="input-radio" name="radioGroup" id="customRadio3">
+            <label for="customRadio3">Radio 3</label>
+        </div>
     </div>
 </div>
     
 
-<div class="bg-primary p-5">
+<div class="bg-main p-5">
     <h1>Primary!</h1>
     <p>This is a section with primary background</p>
 </div>
 
-<div class="bg-success p-5">
+<div class="bg-accent p-5">
     <h1>Success!</h1>
     <p>This is a section with success background</p>
 </div>
