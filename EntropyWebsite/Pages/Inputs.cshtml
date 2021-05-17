@@ -1,22 +1,75 @@
 @page
 
+<style>
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    h2 {
+        margin-top: 1rem;
+    }
+</style>
+
 <h1>Inputs</h1>
 
-<input type="text" class="input-text">
-<input type="text" class="input-text" placeholder="Placeholder">
+<div>
+    <input type="text" class="input-text">
+    <input type="text" class="input-text" placeholder="Placeholder">
+</div>
+<div>
+    <input type="text" class="input-text input-text-underline">
+    <input type="text" class="input-text input-text-underline" id="text-field-2" placeholder="Placeholder">
+</div>
+<div class="input-text-shift" data-placeholder="Placeholder">
+    <input type="text" class="input-text input-text-underline" id="text-field-4">
+</div>
 
 <h2>Text Areas</h2>
 
-<textarea class="input-text"></textarea>
-<textarea class="input-text" placeholder="Placeholder"></textarea>
+<div>
+    <textarea class="input-text"></textarea>
+    <textarea class="input-text" placeholder="Placeholder"></textarea>
+</div>
 
 <h2>Radio</h2>
 
-<input class="input-radio" type="radio" name="group" id="radio-1" value="Item 1">
-<label for="radio-1">Item 1</label>
-<input class="input-radio" type="radio" name="group" id="radio-2" value="Item 2">
-<label for="radio-2">Item 2</label>
-<input class="input-radio" type="radio" name="group" id="radio-3" value="Item 3">
-<label for="radio-3">Item 3</label>
-<input class="input-radio" type="radio" name="group" id="radio-4" value="Item 4">
-<label for="radio-4">Item 4</label>
+<div class="radio-group">
+    <div>
+        <input class="input-radio" type="radio" name="group" id="radio-1" value="Item 1">
+        <label for="radio-1">Item 1</label>
+    </div>
+    <div>
+        <input class="input-radio" type="radio" name="group" id="radio-2" value="Item 2">
+        <label for="radio-2">Item 2</label>
+    </div>
+    <div>
+        <input class="input-radio" type="radio" name="group" id="radio-3" value="Item 3">
+        <label for="radio-3">Item 3</label>
+    </div>
+    <div>
+        <input class="input-radio" type="radio" name="group" id="radio-4" value="Item 4">
+        <label for="radio-4">Item 4</label>
+    </div>
+</div>
+
+<h2>Checkboxes</h2>
+<div class="radio-group">
+    <div>
+        <input class="input-check" type="checkbox" name="group" id="check-1" value="Item 1">
+        <label for="check-1">Item 1</label>
+    </div>
+    <div>
+        <input class="input-check" type="checkbox" name="group" id="check-2" value="Item 2">
+        <label for="check-2">Item 2</label>
+    </div>
+    <div>
+        <input class="input-check" type="checkbox" name="group" id="check-3" value="Item 3">
+        <label for="check-3">Item 3</label>
+    </div>
+    <div>
+        <input class="input-check" type="checkbox" name="group" id="check-4" value="Item 4">
+        <label for="check-4">Item 4</label>
+    </div>
+</div>
