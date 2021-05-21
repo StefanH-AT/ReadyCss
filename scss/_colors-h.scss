@@ -1,39 +1,57 @@
 @use "sass:map";
+@use "sass:string";
+@use "functions/to-number" as *;
 
 // Header for colors. @use this in other files instead of _colors.scss!
 
 $colors: (
         "main": #45DB2E,
         "accent": #DB2EA6,
-        "darkest": #101010,
-        "darker": #232323,
-        "dark": #404040,
-        "middle": #767676,
-        "light": #a0a0a0,
-        "lighter": #d0d0d0,
-        "lightest": #ffffff
+        "shade-0": #101010,
+        "shade-1": #141414,
+        "shade-2": #202020,
+        "shade-3": #2a2a2a,
+        "shade-4": #373737,
+        "shade-5": #505050,
+        "shade-6": #767676,
+        "shade-7": #a0a0a0,
+        "shade-8": #d0d0d0,
+        "shade-9": #ffffff
 );
 
 $palette: (
   "bg": var(--scheme-background),
   "fg": var(--scheme-foreground),
-  "shade": var(--scheme-shade),
-  "shadier": var(--scheme-shadier)
+  "mg": var(--scheme-middleground)
 );
 @each $color-name, $color-value in $colors {
   $palette: map.set($palette, $color-name, var(--color-#{$color-name}));
 }
 
 @mixin theme-light() {
-  --scheme-background: var(--color-lightest);
-  --scheme-foreground: var(--color-darkest);
-  --scheme-shade: var(--color-light);
-  --scheme-shadier: var(--color-lighter);
+  --scheme-background: var(--scheme-shade-9);
+  --scheme-foreground: var(--scheme-shade-0);
+  
+  --scheme-middleground: var(--scheme-shade-7);
+  
+  @each $color-name, $color-value in $colors {
+    @if str-index($color-name, "shade") == 1 {
+      --scheme-#{$color-name}: #{$color-value};
+    }
+  }
 }
 
 @mixin theme-dark() {
-  --scheme-background: var(--color-darkest);
-  --scheme-foreground: var(--color-lightest);
-  --scheme-shade: var(--color-dark);
-  --scheme-shadier: var(--color-darker);
+  --scheme-background: var(--scheme-shade-9);
+  --scheme-foreground: var(--scheme-shade-0);
+  
+  --scheme-middleground: var(--scheme-shade-5);
+  
+  @each $color-name, $color-value in $colors {
+    @if str-index($color-name, "shade") == 1 {
+      // Invert shade colors
+      $id: 9 - to-number(string.slice($color-name, -1));
+      --scheme-shade-#{$id}: #{$color-value};
+    }
+  }
 }

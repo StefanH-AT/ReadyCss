@@ -1,26 +1,26 @@
 @use "../colors-h" as *;
 @use "../sizes-h" as *;
 
-:root {
+.btn {
     /* Color settings */
-    --btn-color: var(--scheme-foreground);
-    --btn-bg: var(--btn-color);
+    --btn-color: var(--scheme-middleground);
     --btn-text-color: var(--scheme-background);
+    --btn-bg: var(--btn-color);
 
     /* Size settings */
     --btn-border-width: var(--border-width);
+    --btn-border-radius: var(--border-radius);
     --btn-font-size: calc(var(--font-size) * 0.75);
     --btn-outline-width: var(--btn-border-width);
     --btn-outline-offset: var(--btn-outline-width);
     --btn-padding-vertical: calc(var(--spacer) * 0.75);
     --btn-padding-horizontal: calc(var(--spacer) * 1.5);
-}
-
-.btn {
+    
     /* Apply colors */
-    background-color: var(--btn-color);
+    background-color: var(--btn-bg);
     color: var(--btn-text-color);
     border: solid var(--btn-color) var(--btn-border-width);
+    border-radius: var(--btn-border-radius);
     
     /* Apply styling */
     display: inline-block;
@@ -39,21 +39,11 @@
         outline-offset: var(--btn-outline-offset);
     }
 
-    &::selection {
-        background-color: var(--btn-color);
-        color: var(--btn-bg);
-    }
-
     &.disabled {
         //--btn-color: var(--scheme-shade);
         //--btn-text-color: var(--scheme-background);
         cursor: default;
         opacity: 0.5;
-        
-        &::selection {
-            //background-color: var(--color-background);
-            //color: var
-        }
     }
 
     // ================

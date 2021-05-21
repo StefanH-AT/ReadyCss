@@ -1,7 +1,54 @@
+
 :root {
-    --navbar-bg: color("bg");
+    --nav-item-border-width: calc(var(--border-width) * 3);
+    --nav-item-border-color: var(--color-main);
+    --nav-item-border-color-hover: var(--color-main);
 }
 
-.navbar {
-    background-color: var(--navbar-bg);
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    
+    &.vertical {
+        flex-direction: column;
+        
+        &.align-start {
+            &>li {
+                border-left: var(--nav-item-border-width) var(--nav-item-border-color) solid;
+            }
+        }
+        &.align-end {
+            &>li {
+                border-right: var(--nav-item-border-width) var(--nav-item-border-color) solid;
+                text-align: right;
+            }
+        }
+    }
+    &.horizontal {
+        flex-direction: row;
+
+        &.align-start {
+            &>li {
+                border-top: var(--nav-item-border-width) var(--nav-item-border-color) solid;
+            }
+        }
+        &.align-end {
+            &>li {
+                border-bottom: var(--nav-item-border-width) var(--nav-item-border-color) solid;
+            }
+        }
+    }
+    
+    &>li {
+        padding: var(--spacer);
+        user-select: none;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: var(--scheme-shadier);
+
+            --nav-item-border-color: var(--nav-item-border-color-hover);
+        }
+    }
 }

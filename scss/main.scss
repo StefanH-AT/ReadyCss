@@ -1,6 +1,4 @@
 @use "vendor/reset";
-@use "colors";
-@use "typography";
 
 @use "elements/code";
 @use "elements/buttons";
@@ -8,9 +6,10 @@
 @use "elements/input-text";
 @use "elements/input-check";
 @use "elements/container";
-
-
-@use "grid";
-@use "sizes";
+@use "elements/nav";
 
 @use "hljs";
+
+@use "sizes";
+@use "colors";
+@use "typography";

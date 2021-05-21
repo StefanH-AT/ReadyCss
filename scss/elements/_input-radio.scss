@@ -39,7 +39,7 @@ input[type=radio].input-radio {
     }
 
     &+label {
-        padding-left: var(--input-radio-size);
+        padding-left: calc(var(--input-check-size) + 1ch);
         vertical-align: middle;
 
         cursor: pointer;

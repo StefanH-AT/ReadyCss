@@ -3,23 +3,50 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>ReadyCSs Docs - @ViewData["Title"]</title>
+    <title>ReadyCSS Documentation - @ViewData["Title"]</title>
     <meta name="og:title" content="@ViewData["Title"]"/>
     <meta name="og:type" content="website"/>
     
     <link rel="stylesheet" href="~/css/ready.css"/>
+    <link rel="stylesheet" href="~/css/docs.css"/>
     
     <script src="https://kit.fontawesome.com/3c465cbf36.js" crossorigin="anonymous"></script>
 </head>
-<body class="theme-system">
+<body class="theme-system docs-site">
 
-    <main role="main">
-        @RenderBody()
-    </main>
+<header class="docs-navbar bg-shade">
+    <ul class="container nav-list horizontal align-end">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+</header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="~/js/theming.js"></script>
+<aside class="docs-sidebar-nav">
+    <ul class="nav-list vertical align-start">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+</aside>
+
+<aside class="docs-sidebar-meta">
+    Sidebar Meta
+</aside>
+
+<main role="main" class="docs-main">
+    @RenderBody()
+</main>
+
+<footer class="docs-sidebar-footer">
+    Footer
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="~/js/theming.js"></script>
 
 </body>
 </html>

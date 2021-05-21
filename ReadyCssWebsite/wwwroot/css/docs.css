@@ -1,0 +1,29 @@
+.docs-site {
+    display: grid;
+    
+    grid-template: 
+        "bar        bar         bar"
+        "nav        main        meta" max-content
+        "footer     footer      footer"
+    /   1fr         4fr         1fr;
+}
+
+.docs-main {
+    grid-area: main;
+}
+
+.docs-navbar {
+    grid-area: bar;
+}
+
+.docs-sidebar-nav {
+    grid-area: nav;
+}
+
+.docs-footer {
+    grid-area: footer;
+}
+
+.docs-sidebar-meta {
+    grid-area: meta;
+}

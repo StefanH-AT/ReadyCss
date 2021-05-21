@@ -2,15 +2,14 @@
 @use "../typography-h" as *;
 @use "../sizes-h" as *;
 
-:root {
-    --input-text-padding: calc(var(--spacer) * 0.5);
-    --input-text-border-width: var(--border-width);
-    --input-text-border-color: var(--scheme-shade);
-    --input-text-min-character-width: 40ch;
-}
-
 input[type=text].input-text,
 textarea.input-text {
+    --input-text-padding: calc(var(--spacer) * 0.5);
+    --input-text-border-width: var(--border-width);
+    --input-text-border-color: var(--scheme-middleground);
+    --input-text-border-radius: var(--border-radius);
+    --input-text-min-character-width: 10ch;
+    
     display: inline-block;
     position: relative;
     
@@ -21,6 +20,11 @@ textarea.input-text {
     font-size: var(--font-size);
     
     border: var(--input-text-border-width) var(--input-text-border-color) solid;
+    border-radius: var(--input-text-border-radius);
+    
+    &::placeholder {
+        color: var(--input-text-border-color);
+    }
     
     &:focus {
         outline: none;

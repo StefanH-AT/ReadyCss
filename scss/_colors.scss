@@ -10,19 +10,16 @@
 @each $color-name, $color-value in $palette {
   .bg-#{$color-name} {
     background-color: $color-value;
-    $bg: var(--scheme-background);
-    @if $color-name == "bg" {
-      $bg: var(--scheme-foreground);
-    }
-    color: $bg;
+    $text-color: var(--scheme-background);
+    color: $text-color;
     
     ::selection {
-      background-color: $bg;
+      background-color: $text-color;
       color: $color-value;
     }    
     
     h1,h2,h3,h4,h5,h6 {
-      color: $bg;
+      color: $text-color;
     }
   }
   
@@ -35,16 +32,21 @@
 
 :root {
   @include theme-light();
-  @media (prefers-color-scheme: light) {
-    .theme-system {
-      @include theme-light();
-    }
+}
+@media (prefers-color-scheme: light) {
+  .theme-system {
+    @include theme-light();
   }
-  @media (prefers-color-scheme: dark) {
-    .theme-system {
-      @include theme-dark();
-    }
+}
+@media (prefers-color-scheme: dark) {
+  .theme-system {
+    @include theme-dark();
   }
+}
+
+body {
+  background-color: var(--scheme-background);
+  color: var(--scheme-foreground);
 }
 
 .theme-dark {
@@ -55,7 +57,3 @@
   @include theme-light();
 }
 
-body {
-  background-color: var(--scheme-background);
-  color: var(--scheme-foreground);
-}

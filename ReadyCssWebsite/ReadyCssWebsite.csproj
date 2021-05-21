@@ -12,6 +12,12 @@
       <Content Include="..\scss\**\*.*">
         <Link>scss\%(RecursiveDir)%(FileName)%(Extension)</Link>
       </Content>
+      <Content Update="..\scss\functions\to-number.scss">
+        <Link>scss\functions\to-number.scss</Link>
+      </Content>
+      <Content Update="..\scss\elements\_code-h.scss">
+        <Link>scss\elements\_code-h.scss</Link>
+      </Content>
     </ItemGroup>
 
 </Project>
