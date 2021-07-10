@@ -46,7 +46,7 @@
         cursor: pointer;
         
         &:hover {
-            background-color: var(--scheme-shadier);
+            background-color: var(--scheme-shade-7);
 
             --nav-item-border-color: var(--nav-item-border-color-hover);
         }

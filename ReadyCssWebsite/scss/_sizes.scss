@@ -34,20 +34,22 @@
 @each $sp-name, $sp-value in $spaces {
     
     // Padding
-    .p-#{$sp-name} {
-        padding: $sp-value;
-    }
-    .pl-#{$sp-name} {
-        padding-left: $sp-value;
-    }
-    .pr-#{$sp-name} {
-        padding-right: $sp-value;
-    }
-    .pt-#{$sp-name} {
-        padding-top: $sp-value;
-    }
-    .pb-#{$sp-name} {
-        padding-bottom: $sp-value;
+    @if $sp-name != auto {
+        .p-#{$sp-name} {
+            padding: $sp-value;
+        }
+        .pl-#{$sp-name} {
+            padding-left: $sp-value;
+        }
+        .pr-#{$sp-name} {
+            padding-right: $sp-value;
+        }
+        .pt-#{$sp-name} {
+            padding-top: $sp-value;
+        }
+        .pb-#{$sp-name} {
+            padding-bottom: $sp-value;
+        }
     }
     
     // Margins

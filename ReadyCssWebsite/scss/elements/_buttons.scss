@@ -77,7 +77,7 @@
     }
     
     &.btn-shadow:not(.btn-popout) {
-        --btn-shadow-color: var(--scheme-shadier);
+        --btn-shadow-color: var(--scheme-shade-7);
         --btn-shadow-offset: calc(var(--btn-border-width) * 2);
         box-shadow: var(--btn-shadow-offset) var(--btn-shadow-offset) 0 0 var(--btn-shadow-color);
         

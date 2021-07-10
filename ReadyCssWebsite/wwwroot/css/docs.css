@@ -1,3 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+:root {
+    --font-family-normal: "Poppins", sans-serif;
+    --font-family-monospace: 'JetBrains Mono', monospace;
+    --heading-color: var(--color-accent);
+}
+
 .docs-site {
     display: grid;
     
@@ -6,6 +16,8 @@
         "nav        main        meta" max-content
         "footer     footer      footer"
     /   1fr         4fr         1fr;
+    
+    gap: 2rem;
 }
 
 .docs-main {
@@ -26,4 +38,52 @@
 
 .docs-sidebar-meta {
     grid-area: meta;
+}
+
+
+.code-example {
+    margin-bottom: 2rem;
+}
+
+.code-example-head {
+    background: var(--scheme-middleground);
+    
+    display: flex;
+    align-items: center;
+    
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.code-example-head > span {
+    margin-left: 1rem;
+    font-size: 0.9em;
+    font-family: var(--font-family-monospace);
+}
+
+.code-example-head > button {
+    margin-left: auto;
+    padding: 0.5rem 0.75rem;
+    
+    border: none;
+    background: var(--scheme-shade-6);
+    
+    color: var(--scheme-foreground);
+    font-size: 0.9em;
+}
+
+.code-example > div:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.code-example-preview {
+    border: solid var(--scheme-middleground) var(--border-width);
+    border-top: none;
+    padding: 0.5rem;
+}
+
+/* Collapse */
+
+.code-example-collapse-button {
 }

@@ -3,28 +3,32 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReadyCssWebsite.Services;
 
-namespace EntropyWebsite
+namespace ReadyCssWebsite
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IConfiguration _configuration;
+        private readonly IWebHostEnvironment _environment;
+        
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
-            Configuration = configuration;
+            _configuration = configuration;
+            _environment = environment;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            var razorPages = services.AddRazorPages();
+            if (_environment.IsDevelopment())
+            {
+                razorPages.AddRazorRuntimeCompilation();
+            }
             
-#if DEBUG
-            services.AddRazorPages().AddRazorRuntimeCompilation();
-#else
-            services.AddRazorPages();
-#endif
-                
+            services.AddTransient<RenderViewComponentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

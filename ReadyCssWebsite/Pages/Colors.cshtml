@@ -13,16 +13,12 @@
     and an accent color. Most designs rarely use more than two colors. If you need a third color, you can add it yourself to fit your site's needs.
 </p>
 
-<div class="row">
-    <div class="col-md pt-5 pb-5 bg-main text-center text-color-dark">
-        --color-main
-    </div>
-    <div class="col-md pt-5 pb-5 bg-accent text-center text-color-dark">
-        --color-accent
-    </div>
+<code-example language="HTML" preview="true"><div class="pt-5 pb-5 bg-accent text-center">
+  --color-accent
 </div>
-
-<p></p>
+<div class="pt-5 pb-5 bg-main text-center">
+  --color-main
+</div></code-example>
 
 <h2>Scheme</h2>
 <p>
@@ -30,11 +26,9 @@
     Instead of hard-coding a button's shadow to be light gray, set it to use the scheme's background shade color.
 </p>
 
-<pre><code>--scheme-background
+<code-example head="false" highlight="false">--scheme-background
 --scheme-foreground
---scheme-shade
---scheme-shadier</code></pre>
-
+--scheme-middleground</code-example>
 <p>
     Entropy only comes with a small scheme pallete for consistency, simplicity and to allow you to expand it yourself.
 </p>
@@ -45,25 +39,15 @@
     To set a theme, add the theme's CSS class to any container. (Use the body tag to set the theme globally)
 </p>
 
-<pre><code class="hljs language-html">@(@"<div class=""theme-dark bg-bg p-1"">
-    Everything in this container is now dark theme
-    <button class=""btn btn-main btn-popout"">Button</button>
-    <button class=""btn btn-outline"">Button</button>
-    <pre><code class=""plaintext"">Code block for demonstration</code></pre>
-</div>")</code></pre>
-
-<div class="theme-dark bg-bg p-1">
+<code-example language="HTML" preview="true"><div class="theme-dark bg-bg p-1">
     Everything in this container is now dark theme
     <button class="btn btn-main btn-popout">Button</button>
     <button class="btn btn-outline">Button</button>
-    <hr/>
     <pre><code class="plaintext">Code block for demonstration</code></pre>
-</div>
+</div></code-example>
 
 <p>
     The <code>theme-system</code> class is adaptive and automatically detect the user's operating system theme preference.
 </p>
 
-<pre><code>&lt;body class="theme-system"&gt;
-
-&lt;/body&gt;</code></pre>
+<code-example language="HTML" preview="false"><body class="theme-system"></body></code-example>

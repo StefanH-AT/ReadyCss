@@ -11,9 +11,13 @@
   .bg-#{$color-name} {
     background-color: $color-value;
     $text-color: var(--scheme-background);
+    
+    @if $color-name == "bg" {
+      $text-color: var(--scheme-foreground);
+    }
     color: $text-color;
     
-    ::selection {
+    &::selection {
       background-color: $text-color;
       color: $color-value;
     }    
@@ -31,29 +35,17 @@
 // ========================================== Theme ==========================================
 
 :root {
-  @include theme-light();
+  @include color-scheme-light();
 }
-@media (prefers-color-scheme: light) {
-  .theme-system {
-    @include theme-light();
-  }
-}
-@media (prefers-color-scheme: dark) {
-  .theme-system {
-    @include theme-dark();
-  }
-}
-
 body {
   background-color: var(--scheme-background);
   color: var(--scheme-foreground);
 }
 
-.theme-dark {
-  @include theme-dark();
-}
-
 .theme-light {
-  @include theme-light();
+  @include color-scheme-light();
+}
+.theme-dark {
+  @include color-scheme-dark();
 }
 

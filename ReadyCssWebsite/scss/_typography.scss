@@ -1,7 +1,11 @@
 @use "typography-h" as *;
 @use "sizes-h" as *;
 
-body, *, html, *::before, *::after {
+*, 
+*::before, 
+*::after,
+body, 
+html {
     font-family: var(--font-family-normal);
     font-size: var(--font-size);
     line-height: 1.2;
@@ -22,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: calc(var(--font-size) * 2.4);
+    font-size: calc(var(--font-size) * 3);
 }
 h2 {
     font-size: calc(var(--font-size) * 2);

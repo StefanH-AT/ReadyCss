@@ -1,6 +1,5 @@
 @use "../typography-h" as *;
 @use "../sizes-h" as *;
-@use "code-h" as *;
 
 code {    
     --code-padding: calc(var(--spacer) * 0.25);
@@ -37,29 +36,5 @@ code {
         
         --code-bg: var(--scheme-shade-8);
         --code-border-radius: 0;
-        
-        
-        // Code language overlay
-        
-        
-        @each $lang, $name in $code-languages {
-            &.#{$lang}::after {
-                content: $name;                
-            }
-        }
-        
-        &::after {
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: calc(var(--spacer) * 0.6);
-            
-            font-size: 0.9em;
-            font-weight: bold;
-            
-            background-color: var(--code-border-color);
-            color: var(--code-bg);
-        }
     }
 }

@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>ReadyCssWebsite</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,6 +19,10 @@
       <Content Update="..\scss\elements\_code-h.scss">
         <Link>scss\elements\_code-h.scss</Link>
       </Content>
+      <Content Update="..\scss\functions\theme-selector.scss">
+        <Link>scss\functions\theme-selector.scss</Link>
+      </Content>
+      <Content Remove="..\scss\**" />
     </ItemGroup>
 
 </Project>
