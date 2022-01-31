@@ -1,0 +1,71 @@
+@use "breakpoints-h" as *;
+
+@use "sizes-h" as *;
+
+@each $s-name, $s-value in $sizer-percentages {
+    .w-#{$s-name} {
+        width: $s-value;
+    }
+    .h-#{$s-name} {
+        height: $s-value;
+    }
+}
+
+@each $br-name, $br-value in $breakpoints {
+    @each $s-name, $s-value in $sizer-percentages {
+        .w-#{$br-name}-#{$s-name} {
+            @include wider-than($br-value) {
+                width: $s-value;
+            }
+        }
+        .h-#{$br-name}-#{$s-name} {
+            @include wider-than($br-value) {
+                height: $s-value;
+            }
+        }
+    }
+}
+
+// ==============================================
+// Margins, Paddings
+// ----------------------------------------------
+
+// There are definitely more condensed approaches to this, but I find this manual way much more readable
+@each $sp-name, $sp-value in $spaces {
+    
+    // Padding
+    @if $sp-name != auto {
+        .p-#{$sp-name} {
+            padding: $sp-value;
+        }
+        .pl-#{$sp-name} {
+            padding-left: $sp-value;
+        }
+        .pr-#{$sp-name} {
+            padding-right: $sp-value;
+        }
+        .pt-#{$sp-name} {
+            padding-top: $sp-value;
+        }
+        .pb-#{$sp-name} {
+            padding-bottom: $sp-value;
+        }
+    }
+    
+    // Margins
+    .m-#{$sp-name} {
+        margin: $sp-value;
+    }
+    .ml-#{$sp-name} {
+        margin-left: $sp-value;
+    }
+    .mr-#{$sp-name} {
+        margin-right: $sp-value;
+    }
+    .mt-#{$sp-name} {
+        margin-top: $sp-value;
+    }
+    .mb-#{$sp-name} {
+        margin-bottom: $sp-value;
+    }
+}

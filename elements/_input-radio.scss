@@ -1,0 +1,66 @@
+@use "../sizes-h" as *;
+
+:root {
+    --input-radio-size: var(--spacer);
+    --input-radio-border-size: calc(var(--border-width) * 2);
+    --input-radio-color: var(--color-main);
+}
+
+input[type=radio].input-radio {
+    appearance: none;
+    vertical-align: middle;
+    
+    position: relative;
+    
+    // Radio Circle
+    &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+
+        user-select: none;
+        
+        left: var(--input-radio-border-size);
+        top: calc(var(--input-radio-size) * -0.5 + var(--input-radio-border-size) * 0.5);
+        
+        width: calc(var(--input-radio-size) - var(--input-radio-border-size) * 2);
+        height: calc(var(--input-radio-size) - var(--input-radio-border-size) * 2);
+        
+        background-color: var(--scheme-background);
+        border-radius: 100%;
+        cursor: pointer;
+        
+        box-shadow: 
+            0 0 0 var(--input-radio-border-size) var(--scheme-background),
+            0 0 0 calc(var(--input-radio-border-size) * 2) var(--input-radio-color);
+    }
+    &:checked::before {
+        background-color: var(--input-radio-color);
+    }
+
+    &+label {
+        padding-left: calc(var(--input-check-size) + 1ch);
+        vertical-align: middle;
+
+        cursor: pointer;
+    }
+    
+    // This just exists to extend the clickable area
+    &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(var(--input-radio-size) * -0.5);
+        width: var(--input-radio-size);
+        height: var(--input-radio-size);
+        
+        cursor: pointer;
+    }
+    &.input-main {
+        --input-radio-color: var(--color-main);
+    }
+    &.input-accent {
+        --input-radio-color: var(--color-accent);
+    }
+    
+}

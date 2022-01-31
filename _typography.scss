@@ -1,0 +1,62 @@
+@use "typography-h" as *;
+@use "sizes-h" as *;
+
+*, 
+*::before, 
+*::after,
+body, 
+html {
+    font-family: var(--font-family-normal);
+    font-size: var(--font-size);
+    line-height: 1.2;
+}
+
+::selection {
+    color: var(--scheme-background);
+    background-color: var(--color-main);
+}
+
+a {
+    color: var(--heading-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: bold;
+}
+
+h1 {
+    font-size: calc(var(--font-size) * 3);
+}
+h2 {
+    font-size: calc(var(--font-size) * 2);
+}
+h3 {
+    font-size: calc(var(--font-size) * 1.75);
+}
+h4 {
+    font-size: calc(var(--font-size) * 1.5);
+}
+h5 {
+    font-size: calc(var(--font-size) * 1.3);
+}
+h6 {
+    font-size: var(--font-size);
+}
+
+p {
+    max-width: var(--paragraph-width);
+    margin-bottom: var(--spacer);
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}

@@ -1,0 +1,11 @@
+// Header for all things typography
+
+:root {
+  --font-family-normal: sans-serif;
+  --font-family-monospace: monospace;
+  --font-size: 1.05rem;
+
+  --heading-color: var(--scheme-foreground);
+  
+  --paragraph-width: 70ch;
+}

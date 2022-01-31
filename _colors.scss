@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "colors-h" as *;
+
+:root {
+  @each $color-name, $color-value in $colors {
+    --color-#{$color-name}: #{$color-value};
+  }
+}
+
+@each $color-name, $color-value in $palette {
+  .bg-#{$color-name} {
+    background-color: $color-value;
+    $text-color: var(--scheme-background);
+    
+    @if $color-name == "bg" {
+      $text-color: var(--scheme-foreground);
+    }
+    color: $text-color;
+    
+    &::selection {
+      background-color: $text-color;
+      color: $color-value;
+    }    
+    
+    h1,h2,h3,h4,h5,h6 {
+      color: $text-color;
+    }
+  }
+  
+  .text-color-#{$color-name} {
+    color: $color-value;
+  }
+}
+
+// ========================================== Theme ==========================================
+
+:root {
+  @include color-scheme-light();
+}
+body {
+  background-color: var(--scheme-background);
+  color: var(--scheme-foreground);
+}
+
+.theme-light {
+  @include color-scheme-light();
+}
+.theme-dark {
+  @include color-scheme-dark();
+}
+

@@ -1,0 +1,63 @@
+@use "../colors-h" as *;
+@use "../typography-h" as *;
+@use "../sizes-h" as *;
+
+.input-text,
+textarea.input-text {
+    --input-text-padding: calc(var(--spacer) * 0.5);
+    --input-text-border-width: var(--border-width);
+    --input-text-border-color: var(--scheme-middleground);
+    --input-text-border-radius: var(--border-radius);
+    --input-text-min-character-width: 10ch;
+    
+    display: inline-block;
+    position: relative;
+    
+    padding: var(--input-text-padding);
+    background-color: var(--scheme-background);
+    color: var(--scheme-foreground);
+    
+    font-size: var(--font-size);
+    
+    border: var(--input-text-border-width) var(--input-text-border-color) solid;
+    border-radius: var(--input-text-border-radius);
+    
+    &::placeholder {
+        color: var(--input-text-border-color);
+    }
+    
+    &:focus {
+        outline: none;
+    }
+    
+    // ===== Textarea =====
+    
+    max-width: 100%; // Keep resizing in-bounds
+    max-height: 100%;
+    min-height: auto;
+    min-width: var(--input-text-min-character-width);
+    
+    &.input-text-underline {
+        border-color: transparent;
+        border-bottom-color: var(--input-text-border-color);
+    }
+    
+}
+
+
+.input-text-shift {
+    position: relative;
+
+    &::after {
+        
+        content: attr(data-placeholder);
+
+        font-size: var(--font-size);
+        color: var(--scheme-shade-7);
+        
+        position: absolute;
+        left: 0;
+        top: 25%;
+    }
+
+}

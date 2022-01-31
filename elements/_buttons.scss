@@ -1,0 +1,94 @@
+@use "../colors-h" as *;
+@use "../sizes-h" as *;
+
+.btn {
+    /* Color settings */
+    --btn-color: var(--scheme-middleground);
+    --btn-text-color: var(--scheme-background);
+    --btn-bg: var(--btn-color);
+
+    /* Size settings */
+    --btn-border-width: var(--border-width);
+    --btn-border-radius: var(--border-radius);
+    --btn-font-size: calc(var(--font-size) * 0.75);
+    --btn-outline-width: var(--btn-border-width);
+    --btn-outline-offset: var(--btn-outline-width);
+    --btn-padding-vertical: calc(var(--spacer) * 0.75);
+    --btn-padding-horizontal: calc(var(--spacer) * 1.5);
+    
+    /* Apply colors */
+    background-color: var(--btn-bg);
+    color: var(--btn-text-color);
+    border: solid var(--btn-color) var(--btn-border-width);
+    border-radius: var(--btn-border-radius);
+    
+    /* Apply styling */
+    display: inline-block;
+    padding: var(--btn-padding-vertical) var(--btn-padding-horizontal) ;
+    margin: calc(var(--btn-border-width) * 2);
+    cursor: pointer;
+    font-weight: normal;
+    font-size: var(--btn-font-size);
+    text-decoration: none;
+    user-select: none;
+    
+    &:focus {
+        outline: var(--btn-outline-width) solid;
+        outline-color: var(--btn-bg);
+        
+        outline-offset: var(--btn-outline-offset);
+    }
+
+    &.disabled {
+        //--btn-color: var(--scheme-shade);
+        //--btn-text-color: var(--scheme-background);
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    // ================
+    // Color variations
+    // ================
+        
+    &.btn-main {
+        --btn-color: var(--color-main);
+    }
+
+    &.btn-accent {
+        --btn-color: var(--color-accent);
+    }
+    
+    // ================
+    // Style variations
+    // ================
+    
+    &.btn-outline {
+        --btn-text-color: var(--btn-color);
+        background-color: transparent;
+    }
+    
+    &.btn-popout:not(.btn-shadow, :focus) {
+        --btn-popout-offset: var(--btn-border-width);
+        --btn-popout-thickness: var(--btn-border-width);
+        box-shadow:
+                var(--btn-popout-offset) var(--btn-popout-offset) 0 0 var(--scheme-background),
+                calc(var(--btn-popout-offset) + var(--btn-popout-thickness)) calc(var(--btn-popout-offset) + var(--btn-popout-thickness)) 0 0 var(--btn-color);
+        
+    }
+    
+    &.btn-shadow:not(.btn-popout) {
+        --btn-shadow-color: var(--scheme-shade-7);
+        --btn-shadow-offset: calc(var(--btn-border-width) * 2);
+        box-shadow: var(--btn-shadow-offset) var(--btn-shadow-offset) 0 0 var(--btn-shadow-color);
+        
+        &:focus {
+            box-shadow: 0 0 0 var(--btn-shadow-offset) var(--btn-shadow-color);
+            outline: none;
+        }
+        
+        &.btn-outline {
+            --btn-shadow-color: var(--btn-color);
+        }
+    }
+}
+
