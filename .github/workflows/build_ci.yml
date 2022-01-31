@@ -1,0 +1,23 @@
+name: Build CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Sass Build
+        uses: gha-utilities/sass-build@247e848d2ba924ee390e5ddac6c7703ba4f13bcd
+        with:
+          source: main.scss
+          destination: ready.css
+      
