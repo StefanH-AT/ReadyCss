@@ -1,0 +1,16 @@
+@mixin palette-default() {
+    --scheme-background: var(--palette-default-background);
+    --scheme-foreground: var(--palette-default-foreground);
+    --scheme-middleground: var(--palette-default-middleground);
+    --scheme-shadow: var(--palette-default-shadow);
+    --scheme-shade-0: var(--palette-default-shade-0);
+    --scheme-shade-1: var(--palette-default-shade-1);
+    --scheme-shade-2: var(--palette-default-shade-2);
+    --scheme-shade-3: var(--palette-default-shade-3);
+    --scheme-shade-4: var(--palette-default-shade-4);
+    --scheme-shade-5: var(--palette-default-shade-5);
+    --scheme-shade-6: var(--palette-default-shade-6);
+    --scheme-shade-7: var(--palette-default-shade-7);
+    --scheme-shade-8: var(--palette-default-shade-8);
+    --scheme-shade-9: var(--palette-default-shade-9);
+}
