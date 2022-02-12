@@ -1,7 +1,3 @@
-@use "../colors-h" as *;
-@use "../typography-h" as *;
-@use "../sizes-h" as *;
-
 .input-text,
 textarea.input-text {
     --input-text-padding: calc(var(--spacer) * 0.5);
