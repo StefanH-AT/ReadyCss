@@ -56,11 +56,5 @@ input[type=radio].input-radio {
         
         cursor: pointer;
     }
-    &.input-main {
-        --input-radio-color: var(--color-main);
-    }
-    &.input-accent {
-        --input-radio-color: var(--color-accent);
-    }
     
 }

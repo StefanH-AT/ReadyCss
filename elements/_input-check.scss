@@ -28,8 +28,6 @@ input[type=checkbox].input-check {
     
     outline: var(--input-check-border-width) solid var(--input-check-color);
     
-    -moz-outline-radius: var(--input-check-corner-radius);
-    
     cursor: pointer;
   }
   &:checked::before {
@@ -43,11 +41,5 @@ input[type=checkbox].input-check {
     vertical-align: middle;
 
     cursor: pointer;
-  }
-  &.input-main {
-    --input-check-color: var(--color-main);
-  }
-  &.input-accent {
-    --input-check-color: var(--color-accent);
   }
 }

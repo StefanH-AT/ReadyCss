@@ -45,18 +45,6 @@
         cursor: default;
         opacity: 0.5;
     }
-
-    // ================
-    // Color variations
-    // ================
-        
-    &.btn-main {
-        --btn-color: var(--color-main);
-    }
-
-    &.btn-accent {
-        --btn-color: var(--color-accent);
-    }
     
     // ================
     // Style variations
