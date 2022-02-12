@@ -4,6 +4,22 @@
 @use "themes/dark" as darkTheme;
 @use "palettes/default" as defaultPalette;
 
+$colors: (
+        "main": #FFD369,
+        "accent": #F05454,
+        "shade-0": #0D1624,
+        "shade-1": #17202D,
+        "shade-2": #222831,
+        "shade-3": #333B46,
+        "shade-4": #434C5A,
+        "shade-5": #596270,
+        "shade-6": #767676,
+        "shade-7": #a0a0a0,
+        "shade-8": #d0d0d0,
+        "shade-9": #fafafa
+);
+
+
 :root {
   @each $color-name, $color-value in $colors {
     --color-#{$color-name}: #{$color-value};
