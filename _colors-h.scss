@@ -1,7 +1,3 @@
-@use "sass:map";
-@use "sass:string";
-@use "functions/to-number" as *;
-
 // Header for colors. @use this in other files instead of _colors.scss!
 
 $colors: (
@@ -18,40 +14,3 @@ $colors: (
         "shade-8": #d0d0d0,
         "shade-9": #fafafa
 );
-
-$palette: (
-  "bg": var(--scheme-background),
-  "fg": var(--scheme-foreground),
-  "mg": var(--scheme-middleground)
-);
-@each $color-name, $color-value in $colors {
-  $palette: map.set($palette, $color-name, var(--color-#{$color-name}));
-}
-
-@mixin color-scheme-light() {
-  --scheme-background: var(--scheme-shade-9);
-  --scheme-foreground: var(--scheme-shade-0);
-  
-  --scheme-middleground: var(--scheme-shade-7);
-  
-  @each $color-name, $color-value in $colors {
-    @if str-index($color-name, "shade") == 1 {
-      --scheme-#{$color-name}: var(--color-#{$color-name});
-    }
-  }
-}
-
-@mixin color-scheme-dark() {
-  --scheme-background: var(--scheme-shade-7);
-  --scheme-foreground: var(--scheme-shade-0);
-  
-  --scheme-middleground: var(--scheme-shade-5);
-  
-  @each $color-name, $color-value in $colors {
-    @if str-index($color-name, "shade") == 1 {
-      // Invert shade colors
-      $id: 9 - to-number(string.slice($color-name, -1));
-      --scheme-shade-#{$id}: var(--color-#{$color-name});
-    }
-  }
-}
