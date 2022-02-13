@@ -2,7 +2,8 @@
 :root {
   --input-check-size: var(--spacer);
   --input-check-border-width: calc(var(--border-width) * 2);
-  --input-check-color: var(--color-main);
+  --input-check-color: var(--scheme-foreground);
+  --input-check-tick-color: var(--scheme-background);
   --input-check-corner-radius: 0%;
 }
 

@@ -1,7 +1,7 @@
 :root {
     --input-radio-size: var(--spacer);
     --input-radio-border-size: calc(var(--border-width) * 2);
-    --input-radio-color: var(--color-main);
+    --input-radio-color: var(--scheme-foreground);
 }
 
 input[type=radio].input-radio {

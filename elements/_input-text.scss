@@ -1,8 +1,13 @@
+:root {
+    --input-text-bg: var(--scheme-background);
+    --input-text-color: var(--scheme-foreground);
+    --input-text-border-color: var(--scheme-middleground);
+}
+
 .input-text,
 textarea.input-text {
     --input-text-padding: calc(var(--spacer) * 0.5);
     --input-text-border-width: var(--border-width);
-    --input-text-border-color: var(--scheme-middleground);
     --input-text-border-radius: var(--border-radius);
     --input-text-min-character-width: 10ch;
     
@@ -10,8 +15,8 @@ textarea.input-text {
     position: relative;
     
     padding: var(--input-text-padding);
-    background-color: var(--scheme-background);
-    color: var(--scheme-foreground);
+    background-color: var(--input-text-bg);
+    color: var(--input-text-color);
     
     font-size: var(--font-size);
     
