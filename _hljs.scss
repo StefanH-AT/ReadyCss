@@ -1,5 +1,5 @@
 ﻿
-[ready-theme=light] {
+.theme-light {
     .hljs {
         color: #333;
         background: #f8f8f8;
@@ -80,7 +80,7 @@
 
 
 // This represents the jetbrains rider color scheme
-[ready-theme=dark] {
+.theme-dark {
     .hljs {
         .hljs-comment, 
         .hljs-quote {
