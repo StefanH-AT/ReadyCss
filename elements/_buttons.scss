@@ -1,7 +1,10 @@
-:root {
+.palette-default {
     /* Color settings */
-    --btn-color: var(--scheme-foreground);
+    --btn-color: var(--scheme-main);
+    --btn-hover-color: var(--scheme-middleground);
     --btn-text-color: var(--scheme-background);
+    --btn-outline-color: var(--btn-color);
+    --btn-outline-text-color: var(--scheme-foreground);
 }
 
 .btn {
@@ -31,8 +34,11 @@
     font-size: var(--btn-font-size);
     text-decoration: none;
     user-select: none;
+
+    transition: background-color var(--transition-duration) ease,
+                border var(--transition-duration) ease;
     
-    &:focus {
+    &:focus-visible {
         outline: var(--btn-outline-width) solid;
         outline-color: var(--btn-bg);
         
@@ -45,38 +51,32 @@
         cursor: default;
         opacity: 0.5;
     }
+
+    &:hover {
+        --btn-color: var(--btn-hover-color);
+    }
+
+    // ================
+    // Color variations
+    // ================
+
+    &.btn-fg {
+        --btn-color: var(--scheme-foreground);
+        --btn-hover-color: var(--scheme-middleground);
+    }
+    &.btn-mg {
+        --btn-color: var(--scheme-middleground);
+        --btn-hover-color: var(--scheme-middleground);
+    }
     
     // ================
     // Style variations
     // ================
     
     &.btn-outline {
-        --btn-text-color: var(--btn-color);
+        color: var(--btn-outline-text-color);
         background-color: transparent;
     }
-    
-    &.btn-popout:not(.btn-shadow, :focus) {
-        --btn-popout-offset: var(--btn-border-width);
-        --btn-popout-thickness: var(--btn-border-width);
-        box-shadow:
-                var(--btn-popout-offset) var(--btn-popout-offset) 0 0 var(--scheme-background),
-                calc(var(--btn-popout-offset) + var(--btn-popout-thickness)) calc(var(--btn-popout-offset) + var(--btn-popout-thickness)) 0 0 var(--btn-color);
-        
-    }
-    
-    &.btn-shadow:not(.btn-popout) {
-        --btn-shadow-color: var(--scheme-shade-7);
-        --btn-shadow-offset: calc(var(--btn-border-width) * 2);
-        box-shadow: var(--btn-shadow-offset) var(--btn-shadow-offset) 0 0 var(--btn-shadow-color);
-        
-        &:focus {
-            box-shadow: 0 0 0 var(--btn-shadow-offset) var(--btn-shadow-color);
-            outline: none;
-        }
-        
-        &.btn-outline {
-            --btn-shadow-color: var(--btn-color);
-        }
-    }
+
 }
 
