@@ -1,14 +1,14 @@
 .palette-default {
     /* Color settings */
     --btn-color: var(--scheme-main);
-    --btn-hover-color: var(--scheme-middleground);
+    --btn-hover-color: black;
     --btn-text-color: var(--scheme-background);
-    --btn-outline-color: var(--btn-color);
     --btn-outline-text-color: var(--scheme-foreground);
 }
 
 .btn {
     --btn-bg: var(--btn-color);
+    --btn-border-color: var(--btn-color);
 
     /* Size settings */
     --btn-border-width: var(--border-width);
@@ -22,11 +22,12 @@
     /* Apply colors */
     background-color: var(--btn-bg);
     color: var(--btn-text-color);
-    border: solid var(--btn-color) var(--btn-border-width);
+    border: solid var(--btn-border-color) var(--btn-border-width);
     border-radius: var(--btn-border-radius);
     
     /* Apply styling */
     display: inline-block;
+    position: relative;
     padding: var(--btn-padding-vertical) var(--btn-padding-horizontal) ;
     margin: calc(var(--btn-border-width) * 2);
     cursor: pointer;
@@ -52,8 +53,20 @@
         opacity: 0.5;
     }
 
-    &:hover {
-        --btn-color: var(--btn-hover-color);
+    // Darkening for hover
+    &::after {
+        content: "";
+        position: absolute;
+        inset: calc(var(--btn-border-width) * -1);
+        pointer-events: none;
+        background: var(--btn-hover-color);
+        opacity: 0;
+
+        transition: opacity var(--transition-duration);
+        border-radius: inherit;
+    }
+    &:hover::after {
+        opacity: 0.1;
     }
 
     // ================
@@ -62,11 +75,12 @@
 
     &.btn-fg {
         --btn-color: var(--scheme-foreground);
-        --btn-hover-color: var(--scheme-middleground);
     }
-    &.btn-mg {
-        --btn-color: var(--scheme-middleground);
-        --btn-hover-color: var(--scheme-middleground);
+    &.btn-bg {
+        --btn-color: var(--scheme-shade-7);
+        --btn-text-color: var(--scheme-foreground);
+        --btn-border-color: var(--scheme-shade-6);
+        outline-color: var(--scheme-foreground);
     }
     
     // ================
