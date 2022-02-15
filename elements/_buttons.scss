@@ -14,8 +14,9 @@
     --btn-border-width: var(--border-width);
     --btn-border-radius: var(--border-radius);
     --btn-font-size: calc(var(--font-size));
-    --btn-outline-width: var(--btn-border-width);
-    --btn-outline-offset: var(--btn-outline-width);
+    --btn-focus-outline-width: var(--btn-border-width);
+    --btn-focus-outline-offset: var(--btn-focus-outline-width);
+    --btn-focus-outline-color: var(--btn-bg);
     --btn-padding-vertical: calc(var(--spacer) * 0.75);
     --btn-padding-horizontal: calc(var(--spacer) * 1.5);
 
@@ -40,10 +41,10 @@
                 border var(--transition-duration) ease;
     
     &:focus-visible {
-        outline: var(--btn-outline-width) solid;
-        outline-color: var(--btn-bg);
+        outline: var(--btn-focus-outline-width) solid;
+        outline-color: var(--btn-focus-outline-color);
         
-        outline-offset: var(--btn-outline-offset);
+        outline-offset: var(--btn-focus-outline-offset);
     }
 
     &.disabled {
@@ -80,7 +81,7 @@
         --btn-color: var(--scheme-shade-7);
         --btn-text-color: var(--scheme-foreground);
         --btn-border-color: var(--scheme-shade-6);
-        outline-color: var(--scheme-foreground);
+        --btn-focus-outline-color: var(--scheme-foreground);
     }
     
     // ================
