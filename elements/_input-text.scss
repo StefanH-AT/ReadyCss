@@ -1,14 +1,15 @@
 :root {
     --input-text-bg: var(--scheme-background);
     --input-text-color: var(--scheme-foreground);
-    --input-text-border-color: var(--scheme-middleground);
+    --input-text-placeholder-color: var(--scheme-middleground);
+    --input-text-border-color: var(--scheme-shade-6);
+    --input-text-padding: calc(var(--spacer) * 0.75);
+    --input-text-border-width: var(--border-width);
+    --input-text-border-radius: var(--border-radius);
 }
 
 .input-text,
 textarea.input-text {
-    --input-text-padding: calc(var(--spacer) * 0.5);
-    --input-text-border-width: var(--border-width);
-    --input-text-border-radius: var(--border-radius);
     --input-text-min-character-width: 10ch;
     
     display: inline-block;
@@ -24,11 +25,12 @@ textarea.input-text {
     border-radius: var(--input-text-border-radius);
     
     &::placeholder {
-        color: var(--input-text-border-color);
+        color: var(--input-text-placeholder-color);
     }
     
     &:focus {
         outline: none;
+        border-color: var(--scheme-main);
     }
     
     // ===== Textarea =====
@@ -39,26 +41,56 @@ textarea.input-text {
     min-width: var(--input-text-min-character-width);
     
     &.input-text-underline {
-        border-color: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
         border-bottom-color: var(--input-text-border-color);
+
+        &:focus {
+            border-color: var(--scheme-main);
+        }
     }
     
 }
 
+.input-text-shift-wrapper {
+
+    --input-text-shift-animation-duration: calc(var(--transition-duration) * 0.5);
+
+    position: relative;
+    padding-top: calc(var(--font-size) + var(--input-text-padding) * 0.5);
+
+    label {
+        content: attr(data-placeholder);
+        position: absolute;
+
+        font-size: var(--font-size);
+
+        z-index: 2;
+        pointer-events: none;
+
+        transition: bottom var(--input-text-shift-animation-duration) ease,
+                    left var(--input-text-shift-animation-duration) ease,
+                    top var(--input-text-shift-animation-duration) ease;
+    }
+
+    .input-text:placeholder-shown + label {
+        left: calc(var(--input-text-padding) + var(--border-width));
+        bottom: calc(var(--input-text-padding) + var(--border-width));
+        color: var(--input-text-placeholder-color);
+    }
+    .input-text + label {
+        left: 0;
+        bottom: calc(var(--input-text-padding) * 3 + var(--border-width) * 2 + var(--font-size));
+        color: var(--scheme-foreground);
+    }
+
+
+}
 
 .input-text-shift {
     position: relative;
 
-    &::after {
-        
-        content: attr(data-placeholder);
-
-        font-size: var(--font-size);
-        color: var(--scheme-shade-7);
-        
-        position: absolute;
-        left: 0;
-        top: 25%;
-    }
 
 }
