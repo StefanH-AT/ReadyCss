@@ -1,17 +1,18 @@
 :root {
     --input-text-bg: var(--scheme-background);
     --input-text-color: var(--scheme-foreground);
-    --input-text-placeholder-color: var(--scheme-middleground);
     --input-text-border-color: var(--scheme-shade-6);
+    --input-text-placeholder-color: var(--input-text-border-color);
     --input-text-padding: calc(var(--spacer) * 0.75);
     --input-text-border-width: var(--border-width);
     --input-text-border-radius: var(--border-radius);
+    --input-text-focus-border-color: var(--scheme-main);
 }
 
 .input-text,
 textarea.input-text {
     --input-text-min-character-width: 10ch;
-    
+
     display: inline-block;
     position: relative;
     
@@ -23,14 +24,20 @@ textarea.input-text {
     
     border: var(--input-text-border-width) var(--input-text-border-color) solid;
     border-radius: var(--input-text-border-radius);
+
+    transition: border-top-color var(--transition-duration) ease,
+                border-right-color var(--transition-duration) ease,
+                border-bottom-color var(--transition-duration) ease,
+                border-left-color var(--transition-duration) ease;
     
     &::placeholder {
         color: var(--input-text-placeholder-color);
+        opacity: 1;
     }
     
     &:focus {
         outline: none;
-        border-color: var(--scheme-main);
+        border-color: var(--input-text-focus-border-color);
     }
     
     // ===== Textarea =====
@@ -62,28 +69,40 @@ textarea.input-text {
     padding-top: calc(var(--font-size) + var(--input-text-padding) * 0.5);
 
     label {
+
+        --input-text-shift-label-padding: calc(var(--input-text-padding) * 0.5);
+        padding-inline: var(--input-text-shift-label-padding);
+        color: var(--input-text-placeholder-color);
+
         content: attr(data-placeholder);
         position: absolute;
-
-        font-size: var(--font-size);
+        left: calc(var(--input-text-padding) + var(--border-width) - var(--input-text-shift-label-padding));
 
         z-index: 2;
         pointer-events: none;
 
         transition: bottom var(--input-text-shift-animation-duration) ease,
                     left var(--input-text-shift-animation-duration) ease,
-                    top var(--input-text-shift-animation-duration) ease;
+                    color var(--input-text-shift-animation-duration) ease,
+                    font-size var(--input-text-shift-animation-duration) ease;
     }
 
+    // Input empty
     .input-text:placeholder-shown + label {
-        left: calc(var(--input-text-padding) + var(--border-width));
+        font-size: var(--font-size);
         bottom: calc(var(--input-text-padding) + var(--border-width));
         color: var(--input-text-placeholder-color);
+        background: transparent;
     }
+    // Input filled
     .input-text + label {
-        left: 0;
-        bottom: calc(var(--input-text-padding) * 3 + var(--border-width) * 2 + var(--font-size));
-        color: var(--scheme-foreground);
+        font-size: calc(var(--font-size) * 0.75);
+        bottom: calc(var(--input-text-padding) * 2 + var(--border-width) * 3 + var(--font-size) * 0.5);
+        color: var(--scheme-middleground);
+        background: var(--input-text-bg);
+    }
+    .input-text:focus + label {
+        color: var(--input-text-focus-border-color);
     }
 
 
