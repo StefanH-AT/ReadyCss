@@ -79,6 +79,7 @@ textarea.input-text {
 
         z-index: 2;
         pointer-events: none;
+        user-select: none;
 
         transition: bottom var(--input-text-shift-animation-duration) ease,
                     left var(--input-text-shift-animation-duration) ease,
