@@ -1,15 +1,14 @@
 
 :root {
-  --input-check-size: var(--spacer);
-  --input-check-border-width: calc(var(--border-width) * 2);
+  --input-check-size: 1em;
+  --input-check-border-width: calc(var(--border-width));
   --input-check-color: var(--scheme-foreground);
   --input-check-tick-color: var(--scheme-background);
-  --input-check-corner-radius: 0%;
+  --input-check-corner-radius: var(--border-radius);
 }
 
 input[type=checkbox].input-check {
   appearance: none;
-  vertical-align: middle;
 
   position: relative;
   
@@ -22,12 +21,15 @@ input[type=checkbox].input-check {
     user-select: none;
 
     left: 0;
-    top: calc(var(--input-check-size) * -0.5);
+    //top: calc(var(--input-check-size) * -0.5);
+    top: calc(var(--input-check-size) * -1);
 
-    width: calc(var(--input-check-size));
-    height: calc(var(--input-check-size));
+    width: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
+    height: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
     
-    outline: var(--input-check-border-width) solid var(--input-check-color);
+    border: var(--input-check-border-width) solid var(--input-check-color);
+
+    border-radius: var(--input-check-corner-radius);
     
     cursor: pointer;
   }
