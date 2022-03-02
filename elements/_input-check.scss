@@ -1,13 +1,14 @@
 
-:root {
-  --input-check-size: 1em;
-  --input-check-border-width: calc(var(--border-width));
-  --input-check-color: var(--scheme-foreground);
-  --input-check-tick-color: var(--scheme-background);
-  --input-check-corner-radius: var(--border-radius);
-}
-
 input[type=checkbox].input-check {
+  --input-check-size: 1.25em;
+  --input-check-border-width: calc(var(--border-width));
+  --input-check-color: var(--scheme-main);
+  --input-check-tick-color: var(--scheme-main);
+  --input-check-corner-radius: calc(var(--border-radius) * 0.5);
+
+  width: var(--input-check-size);
+  height: var(--input-check-size);
+
   appearance: none;
 
   position: relative;
@@ -21,8 +22,7 @@ input[type=checkbox].input-check {
     user-select: none;
 
     left: 0;
-    //top: calc(var(--input-check-size) * -0.5);
-    top: calc(var(--input-check-size) * -1);
+    top: calc(var(--input-check-size) * 0.175);
 
     width: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
     height: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
@@ -39,10 +39,18 @@ input[type=checkbox].input-check {
     background-image: url("https://www.svgrepo.com/show/169312/check-mark.svg");
   }
 
-  &+label {
-    padding-left: calc(var(--input-check-size) + 1ch);
-    vertical-align: middle;
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
 
+  &:focus-visible::before {
+    outline-offset: var(--input-check-border-width);
+    outline: var(--input-check-border-width) solid var(--input-check-tick-color);
+  }
+
+  & + label {
+    padding-inline-start: 0.5ch;
     cursor: pointer;
   }
 }
