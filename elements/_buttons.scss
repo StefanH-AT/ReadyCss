@@ -92,6 +92,12 @@
         color: var(--btn-outline-text-color);
         background-color: transparent;
     }
+    
+    &.btn-sm {
+        --btn-font-size: calc(var(--font-size) * 0.75);
+        --btn-padding-vertical: calc(var(--spacer) * 0.5);
+        --btn-padding-horizontal: calc(var(--spacer) * 1);
+    }
 
 }
 
