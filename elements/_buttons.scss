@@ -98,6 +98,15 @@
         --btn-padding-vertical: calc(var(--spacer) * 0.5);
         --btn-padding-horizontal: calc(var(--spacer) * 1);
     }
+    
+    &.btn-inline {
+        --btn-bg: transparent;
+        --btn-padding-vertical: 0;
+        --btn-padding-horizontal: 0;
+        --btn-border-width: 0;
+        --btn-border-radius: 0;
+        --btn-text-color: var(--scheme-foreground);
+    }
 
 }
 
