@@ -1,5 +1,5 @@
 @mixin palette-default() {
-    --scheme-main: var(--color-main);
+    --scheme-main: var(--palette-default-main);
     --scheme-background: var(--palette-default-background);
     --scheme-foreground: var(--palette-default-foreground);
     --scheme-middleground: var(--palette-default-middleground);
