@@ -31,6 +31,7 @@ textarea.input-text {
                 border-left-color var(--transition-duration) ease;
     
     &::placeholder {
+        transition: color var(--transition-duration) ease;
         color: var(--input-text-placeholder-color);
         opacity: 1;
     }
@@ -38,6 +39,9 @@ textarea.input-text {
     &:focus {
         outline: none;
         border-color: var(--input-text-focus-border-color);
+    }
+    &:focus::placeholder {
+        color: var(--input-text-focus-border-color);
     }
     
     // ===== Textarea =====
