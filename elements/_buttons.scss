@@ -1,35 +1,24 @@
-.palette-default {
-    /* Color settings */
-    --btn-color: var(--scheme-main);
-    --btn-hover-color: black;
-    --btn-text-color: var(--scheme-background);
-    --btn-outline-text-color: var(--scheme-foreground);
-}
-
 .btn {
-    --btn-bg: var(--btn-color);
-    --btn-border-color: var(--btn-color);
 
     /* Size settings */
-    --btn-border-width: var(--border-width);
-    --btn-border-radius: var(--border-radius);
+    --btn-border-radius: var(--radius);
     --btn-font-size: calc(var(--font-size));
     --btn-focus-outline-width: var(--btn-border-width);
     --btn-focus-outline-offset: var(--btn-focus-outline-width);
-    --btn-focus-outline-color: var(--btn-bg);
     --btn-padding-vertical: calc(var(--spacer) * 0.75);
     --btn-padding-horizontal: calc(var(--spacer) * 1.5);
+    --btn-press-dip: 2px;
 
     /* Apply colors */
-    background-color: var(--btn-bg);
+    background: var(--btn-bg);
     color: var(--btn-text-color);
-    border: solid var(--btn-border-color) var(--btn-border-width);
     border-radius: var(--btn-border-radius);
     
     /* Apply styling */
     display: inline-block;
     position: relative;
-    padding: var(--btn-padding-vertical) var(--btn-padding-horizontal) ;
+    border: none;
+    padding: var(--btn-padding-vertical) var(--btn-padding-horizontal);
     margin: calc(var(--btn-border-width) * 2);
     cursor: pointer;
     font-weight: normal;
@@ -38,60 +27,48 @@
     user-select: none;
 
     transition: background-color var(--transition-duration) ease,
+                transform var(--transition-duration-quick) ease,
                 border var(--transition-duration) ease;
     
     &:focus-visible {
         outline: var(--btn-focus-outline-width) solid;
         outline-color: var(--btn-focus-outline-color);
-        
         outline-offset: var(--btn-focus-outline-offset);
     }
 
-    &.disabled {
-        //--btn-color: var(--scheme-shade);
-        //--btn-text-color: var(--scheme-background);
+    &:hover:not(:disabled) {
+        background: var(--btn-hover-bg);
+        border-color: var(--btn-hover-color);
+    }
+
+    &:active:not(:disabled) {
+        transform: translateY(var(--btn-press-dip));
+    }
+
+    &:disabled {
+        background-color: var(--btn-disabled-bg);
+        color: var(--btn-disabled-text-color);
         cursor: default;
-        opacity: 0.5;
-    }
-
-    // Darkening for hover
-    &::after {
-        content: "";
-        position: absolute;
-        inset: calc(var(--btn-border-width) * -1);
-        pointer-events: none;
-        background: var(--btn-hover-color);
-        opacity: 0;
-
-        transition: opacity var(--transition-duration);
-        border-radius: inherit;
-    }
-    &:hover::after {
-        opacity: 0.1;
     }
 
     // ================
     // Color variations
     // ================
 
-    &.btn-fg {
-        --btn-color: var(--scheme-foreground);
+    &.btn-main {
+        --btn-bg: var(--scheme-main);
+        --btn-text-color: var(--scheme-background);
+        --btn-hover-bg: var(--scheme-main-hover);
     }
-    &.btn-bg {
-        --btn-color: var(--scheme-shade-7);
-        --btn-text-color: var(--scheme-foreground);
-        --btn-border-color: var(--scheme-shade-6);
-        --btn-focus-outline-color: var(--scheme-foreground);
+    &.btn-fg {
+        --btn-bg: var(--scheme-foreground);
+        --btn-text-color: var(--scheme-background);
+        --btn-hover-bg: var(--scheme-shade-2);
     }
     
     // ================
     // Style variations
     // ================
-    
-    &.btn-outline {
-        color: var(--btn-outline-text-color);
-        background-color: transparent;
-    }
     
     &.btn-sm {
         --btn-font-size: calc(var(--font-size) * 0.75);
@@ -103,10 +80,42 @@
         --btn-bg: transparent;
         --btn-padding-vertical: 0;
         --btn-padding-horizontal: 0;
-        --btn-border-width: 0;
         --btn-border-radius: 0;
         --btn-text-color: var(--scheme-foreground);
+        --btn-hover-bg: transparent;
     }
 
 }
 
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    isolation: isolate;
+
+    > .btn:first-child {
+        margin-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    > .btn:last-child {
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    > .btn:not(:first-child, :last-child) {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+    }
+
+    > .btn:focus-visible {
+        z-index: 2;
+        outline-offset: 0;
+    }
+}

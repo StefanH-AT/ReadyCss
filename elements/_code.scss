@@ -4,7 +4,7 @@ code {
     --code-padding: calc(var(--spacer) * 0.25) calc(var(--spacer) * 0.5);
     --code-color: var(--scheme-shade-1);
     --code-border-color: var(--code-bg);
-    --code-border-radius: var(--border-radius);
+    --code-border-radius: var(--radius);
 
     border-radius: var(--code-border-radius);
     
