@@ -3,30 +3,9 @@
 @use "themes/dark" as darkTheme;
 @use "palettes/default" as defaultPalette;
 
-$colors: (
-        "main": #0f9fff,
-        "accent": #F05454,
-        "shade-0": #0b0e10,
-        "shade-1": hsl(204, 10%, 11%),
-        "shade-2": hsl(204, 10%, 15%),
-        "shade-3": hsl(204, 10%, 19%),
-        "shade-4": hsl(204, 10%, 26%),
-        "shade-5": hsl(204, 10%, 35%),
-        "shade-6": hsl(204, 10%, 79%),
-        "shade-7": hsl(204, 10%, 80%),
-        "shade-8": hsl(204, 10%, 92%),
-        "shade-9": hsl(204, 10%, 100%)
-);
-
-
-:root {
-  @each $color-name, $color-value in $colors {
-    --color-#{$color-name}: #{$color-value};
-  }
-}
-
 html,
-.palette-default {
+.palette-default,
+html {
   @include defaultPalette.palette-default();
 }
 

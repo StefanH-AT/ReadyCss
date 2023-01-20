@@ -1,21 +1,28 @@
 @mixin theme-dark() {
-    --palette-default-main: var(--color-main);
-    --palette-default-accent: var(--color-accent);
+    --palette-default-main: #0f9fff;
+    --palette-default-main-hover: hsl(204, 100%, 45%);
+    --palette-default-shade-0: hsl(204, 10%, 100%);
+    --palette-default-shade-1: hsl(204, 10%, 92%);
+    --palette-default-shade-2: hsl(204, 10%, 80%);
+    --palette-default-shade-3: hsl(204, 10%, 79%);
+    --palette-default-shade-4: hsl(204, 10%, 35%);
+    --palette-default-shade-5: hsl(204, 10%, 26%);
+    --palette-default-shade-6: hsl(204, 10%, 19%);
+    --palette-default-shade-7: hsl(204, 10%, 15%);
+    --palette-default-shade-8: hsl(204, 10%, 11%);
+    --palette-default-shade-9: hsl(204, 10%, 5%);
 
-    --palette-default-background: var(--color-shade-1);
-    --palette-default-foreground: var(--color-shade-9);
-    
-    --palette-default-middleground: var(--color-shade-5);
-    --palette-default-shadow: var(--color-shade-0);
+    --palette-default-control-bg: hsl(204, 10%, 15%);
+    --palette-default-control-hover-bg: hsl(204, 10%, 20%);
+    --palette-default-control-disabled-bg: hsl(204, 10%, 13%);
 
-    --palette-default-shade-0: var(--color-shade-9);
-    --palette-default-shade-1: var(--color-shade-8);
-    --palette-default-shade-2: var(--color-shade-7);
-    --palette-default-shade-3: var(--color-shade-6);
-    --palette-default-shade-4: var(--color-shade-5);
-    --palette-default-shade-5: var(--color-shade-4);
-    --palette-default-shade-6: var(--color-shade-3);
-    --palette-default-shade-7: var(--color-shade-2);
-    --palette-default-shade-8: var(--color-shade-1);
-    --palette-default-shade-9: var(--color-shade-0);
+    --palette-default-surface-0: var(--palette-default-shade-7);
+
+    --palette-default-background: var(--palette-default-shade-8);
+    --palette-default-foreground: var(--palette-default-shade-1);
+    --palette-default-text-color: hsl(204, 0%, 95%);
+    --palette-default-text-muted-color: hsl(204, 0%, 50%);
+    --palette-default-middleground: var(--palette-default-shade-5);
+
+    --palette-default-shadow: hsl(204, 10%, 1%);
 }

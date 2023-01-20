@@ -1,9 +1,19 @@
 @mixin palette-default() {
+
+    --scheme-focus: hsl(30, 100%, 50%);
+
+    // Colors definitions
     --scheme-main: var(--palette-default-main);
+    --scheme-main-hover: var(--palette-default-main-hover);
+
     --scheme-background: var(--palette-default-background);
     --scheme-foreground: var(--palette-default-foreground);
+    --scheme-text-color: var(--palette-default-text-color);
+    --scheme-text-muted-color: var(--palette-default-text-muted-color);
     --scheme-middleground: var(--palette-default-middleground);
+
     --scheme-shadow: var(--palette-default-shadow);
+
     --scheme-shade-0: var(--palette-default-shade-0);
     --scheme-shade-1: var(--palette-default-shade-1);
     --scheme-shade-2: var(--palette-default-shade-2);
@@ -14,4 +24,19 @@
     --scheme-shade-7: var(--palette-default-shade-7);
     --scheme-shade-8: var(--palette-default-shade-8);
     --scheme-shade-9: var(--palette-default-shade-9);
+
+    --scheme-surface-0: var(--palette-default-surface-0);
+
+    --control-bg: var(--palette-default-control-bg);
+    --control-hover-bg: var(--palette-default-control-hover-bg);
+    --control-disabled-bg: var(--palette-default-control-disabled-bg);
+
+    // Buttons
+    --btn-bg: var(--control-bg);
+    --btn-hover-bg: var(--control-hover-bg);
+    --btn-disabled-bg: var(--control-disabled-bg);
+    --btn-disabled-text-color: var(--scheme-text-muted-color);
+    --btn-text-color: var(--scheme-text-color);
+    --btn-outline-text-color: var(--scheme-foreground);
+    --btn-focus-outline-color: var(--scheme-focus);
 }
