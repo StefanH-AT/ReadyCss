@@ -18,8 +18,10 @@ body {
 
 .theme-light {
   @include lightTheme.theme-light();
+  color-scheme: dark;
 }
 .theme-dark {
   @include darkTheme.theme-dark();
+  color-scheme: light;
 }
 
