@@ -1,11 +1,24 @@
+@mixin checkbox-pseudo-base() {
+  content: '';
+  display: inline-block;
+  position: absolute;
 
+  left: 0;
+  top: calc(var(--input-check-size) * 0.175);
+
+  width: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
+  height: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
+
+  border: var(--input-check-border-width) solid transparent;
+}
 input[type=checkbox].input-check {
   --input-check-size: 1.25em;
   --input-check-border-width: calc(var(--border-width));
   --input-check-color: var(--scheme-main);
   --input-check-tick-color: var(--scheme-background);
   --input-check-corner-radius: calc(var(--radius) * 0.5);
-  --input-check-cutout: var(--cutout-checkmark);
+  --input-check-cutout-start: var(--cutout-checkmark-start);
+  --input-check-cutout-end: var(--cutout-checkmark-end);
 
   width: var(--input-check-size);
   height: var(--input-check-size);
@@ -16,27 +29,27 @@ input[type=checkbox].input-check {
   
   // Check Border
   &::before {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    
+    @include checkbox-pseudo-base;
+
     user-select: none;
-    cursor: pointer;
 
-    left: 0;
-    top: calc(var(--input-check-size) * 0.175);
-
-    width: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
-    height: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
-
-    border: var(--input-check-border-width) solid var(--input-check-color);
+    border-color: var(--input-check-color);
     border-radius: var(--input-check-corner-radius);
 
-    clip-path: var(--input-check-cutout);
+    clip-path: var(--input-check-cutout-start);
+    transition: var(--transition-duration) clip-path var(--transition-shape-bouncy);
+    @media (prefers-reduced-motion) {
+      transition: none;
+    }
   }
   &:checked::before {
     background-color: var(--input-check-color);
+    clip-path: var(--input-check-cutout-end);
   }
+  &::after {
+    @include checkbox-pseudo-base;
+    cursor: pointer;
+ }
 
   &:focus,
   &:focus-visible {
@@ -51,5 +64,10 @@ input[type=checkbox].input-check {
   & + label {
     padding-inline-start: 0.5ch;
     cursor: pointer;
+  }
+
+  &.input-check-cross {
+    --input-check-cutout-start: var(--cutout-cross-start);
+    --input-check-cutout-end: var(--cutout-cross-end);
   }
 }

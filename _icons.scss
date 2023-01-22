@@ -1,4 +1,35 @@
 :root {
-  --cutout-checkmark: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,
-          40% 80%, 90% 30%, 80% 20%, 40% 60%, 20% 40%, 10% 50%, 40% 80%);
+  --cutout-checkmark-start: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,
+          40% 80%, /* Center top initial*/
+          40% 80%, 30% 70%, /* Right tick*/
+          40% 60%, /* Center bottom */
+          40% 60%, 40% 80%, /* Left tick */
+          40% 80%); /* Center top */
+  --cutout-checkmark-end: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,
+          40% 80%, /* Center top initial*/
+          90% 30%, 80% 20%, /* Right tick*/
+          40% 60%, /* Center bottom */
+          20% 40%, 10% 50%, /* Left tick */
+          40% 80%); /* Center top */
+
+  --cutout-cross-start: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,
+          50% 50%, /* Top left initial*/
+          50% 50%, /* Middle left */
+          50% 50%, 50% 50%, /* Bottom left */
+          50% 50%, /* Middle Bottom */
+          50% 50%, 50% 50%, /* Bottom right */
+          50% 50%, /* Middle Right */
+          50% 50%, 50% 50%, /* Top right */
+          50% 50%, /* Middle top */
+          50% 50%, 50% 50%); /* Top left */
+  --cutout-cross-end: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,
+          15% 25%, /* Top left initial*/
+          40% 50%, /* Middle left */
+          15% 75%, 25% 85%, /* Bottom left */
+          50% 60%, /* Middle Bottom */
+          75% 85%, 85% 75%, /* Bottom right */
+          60% 50%, /* Middle Right */
+          85% 25%, 75% 15%, /* Top right */
+          50% 40%, /* Middle top */
+          25% 15%, 15% 25%); /* Top left */
 }
