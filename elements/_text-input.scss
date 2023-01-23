@@ -1,29 +1,24 @@
 :root {
-    --input-text-bg: var(--scheme-background);
-    --input-text-color: var(--scheme-foreground);
-    --input-text-border-color: var(--scheme-shade-6);
-    --input-text-placeholder-color: var(--scheme-shade-6);
-    --input-text-padding: calc(var(--spacer) * 0.75);
-    --input-text-border-width: var(--border-width);
-    --input-text-border-radius: var(--radius);
-    --input-text-focus-border-color: var(--scheme-main);
+    --text-input-padding: calc(var(--spacer) * 0.75);
 }
 
-.input-text,
-textarea.input-text {
-    --input-text-min-character-width: 10ch;
+.text-input,
+textarea.text-input {
+    --text-input-min-character-width: 10ch;
+    --text-input-border-width: var(--border-width);
+    --text-input-border-radius: var(--radius);
 
     display: inline-block;
     position: relative;
     
-    padding: var(--input-text-padding);
-    background-color: var(--input-text-bg);
-    color: var(--input-text-color);
+    padding: var(--text-input-padding);
+    background-color: var(--text-input-bg);
+    color: var(--text-input-text-color);
     
     font-size: var(--font-size);
     
-    border: var(--input-text-border-width) var(--input-text-border-color) solid;
-    border-radius: var(--input-text-border-radius);
+    border: var(--text-input-border-width) var(--text-input-border-color) solid;
+    border-radius: var(--text-input-border-radius);
 
     transition: border-top-color var(--transition-duration) ease,
                 border-right-color var(--transition-duration) ease,
@@ -32,16 +27,16 @@ textarea.input-text {
     
     &::placeholder {
         transition: color var(--transition-duration) ease;
-        color: var(--input-text-placeholder-color);
+        color: var(--text-input-placeholder-color);
         opacity: 1;
     }
     
     &:focus {
         outline: none;
-        border-color: var(--input-text-focus-border-color);
+        border-color: var(--text-input-focus-border-color);
     }
     &:focus::placeholder {
-        color: var(--input-text-focus-border-color);
+        color: var(--text-input-focus-border-color);
     }
     
     // ===== Textarea =====
@@ -49,14 +44,14 @@ textarea.input-text {
     max-width: 100%; // Keep resizing in-bounds
     max-height: 100%;
     min-height: auto;
-    min-width: var(--input-text-min-character-width);
+    min-width: var(--text-input-min-character-width);
     
-    &.input-text-underline {
+    &.text-input-underline {
         border-top: none;
         border-left: none;
         border-right: none;
         border-radius: 0;
-        border-bottom-color: var(--input-text-border-color);
+        border-bottom-color: var(--text-input-border-color);
 
         &:focus {
             border-color: var(--scheme-main);
@@ -65,7 +60,7 @@ textarea.input-text {
     
 }
 
-.input-text-shift-wrapper {
+.text-input-shift-wrapper {
 
     --input-text-shift-animation-duration: calc(var(--transition-duration) * 0.5);
 
@@ -73,13 +68,13 @@ textarea.input-text {
 
     label {
 
-        --input-text-shift-label-padding: calc(var(--input-text-padding) * 0.5);
+        --input-text-shift-label-padding: calc(var(--text-input-padding) * 0.5);
         padding-inline: var(--input-text-shift-label-padding);
-        color: var(--input-text-placeholder-color);
+        color: var(--text-input-placeholder-color);
 
         content: attr(data-placeholder);
         position: absolute;
-        left: calc(var(--input-text-padding) + var(--border-width) - var(--input-text-shift-label-padding));
+        left: calc(var(--text-input-padding) + var(--border-width) - var(--input-text-shift-label-padding));
 
         z-index: 2;
         pointer-events: none;
@@ -92,21 +87,21 @@ textarea.input-text {
     }
 
     // Input empty
-    .input-text:placeholder-shown + label {
+    .text-input:placeholder-shown + label {
         font-size: var(--font-size);
-        bottom: calc(var(--input-text-padding) + var(--border-width));
-        color: var(--input-text-placeholder-color);
+        bottom: calc(var(--text-input-padding) + var(--border-width));
+        color: var(--text-input-placeholder-color);
         background: transparent;
     }
     // Input filled
-    .input-text + label {
+    .text-input + label {
         font-size: calc(var(--font-size) * 0.75);
-        bottom: calc(var(--input-text-padding) * 2 + var(--border-width) * 3 + var(--font-size) * 0.5);
+        bottom: calc(var(--text-input-padding) * 2 + var(--border-width) * 3 + var(--font-size) * 0.5);
         color: var(--scheme-middleground);
-        background: var(--input-text-bg);
+        background: var(--text-input-bg);
     }
-    .input-text:focus + label {
-        color: var(--input-text-focus-border-color);
+    .text-input:focus + label {
+        color: var(--text-input-focus-border-color);
     }
 
 

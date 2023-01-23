@@ -3,10 +3,11 @@
 @use "icons";
 
 @use "elements/code";
-@use "elements/buttons";
-@use "elements/input-radio";
-@use "elements/input-text";
-@use "elements/input-check";
+@use "elements/button";
+@use "elements/radio-button";
+@use "elements/text-input";
+@use "elements/checkbox";
+@use "elements/switch";
 
 @use "hljs";
 

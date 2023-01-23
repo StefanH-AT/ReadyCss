@@ -37,10 +37,16 @@
     --btn-disabled-bg: var(--control-disabled-bg);
     --btn-disabled-text-color: var(--scheme-text-muted-color);
     --btn-text-color: var(--scheme-text-color);
-    --btn-outline-text-color: var(--scheme-foreground);
     --btn-focus-outline-color: var(--scheme-focus);
 
     // Checkbox
     --checkbox-unchecked-bg: var(--control-bg);
     --checkbox-unchecked-hover-bg: var(--control-hover-bg);
+
+    // Text input
+    --text-input-bg: var(--scheme-background);
+    --text-input-placeholder-color: var(--scheme-shade-6);
+    --text-input-text-color: var(--scheme-text-color);
+    --text-input-border-color: var(--control-bg);
+    --text-input-focus-border-color: var(--scheme-main);
 }
