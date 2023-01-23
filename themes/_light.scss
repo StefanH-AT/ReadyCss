@@ -12,11 +12,17 @@
     --palette-default-shade-8: hsl(204, 10%, 95%);
     --palette-default-shade-9: hsl(204, 10%, 100%);
 
+    --palette-default-control-bg: hsl(204, 10%, 90%);
+    --palette-default-control-hover-bg: hsl(204, 10%, 83%);
+    --palette-default-control-disabled-bg: hsl(204, 10%, 90%);
+
     --palette-default-surface-0: var(--palette-default-shade-8);
 
     --palette-default-background: var(--palette-default-shade-9);
     --palette-default-foreground: var(--palette-default-shade-0);
     --palette-default-middleground: var(--palette-default-shade-6);
+    --palette-default-text-color: hsl(204, 0%, 5%);
+    --palette-default-text-muted-color: hsl(204, 0%, 70%);
 
-    --palette-default-shadow: hsl(204, 10%, 94%);
+    --palette-default-shadow: hsl(204, 10%, 70%);
 }

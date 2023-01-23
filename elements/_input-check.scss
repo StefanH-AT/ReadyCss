@@ -1,55 +1,68 @@
+// This mixin is made to be applied to both ::before and ::after pseudo-elements for
+// correct sizing and placement of the replacement checkbox
 @mixin checkbox-pseudo-base() {
   content: '';
   display: inline-block;
   position: absolute;
 
   left: 0;
-  top: calc(var(--input-check-size) * 0.175);
+  top: calc(var(--checkbox-size) * 0.175);
 
-  width: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
-  height: calc(var(--input-check-size) - var(--input-check-border-width) * 2);
+  border-radius: var(--checkbox-radius);
 
-  border: var(--input-check-border-width) solid transparent;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
 }
-input[type=checkbox].input-check {
-  --input-check-size: 1.25em;
-  --input-check-border-width: calc(var(--border-width));
-  --input-check-color: var(--scheme-main);
-  --input-check-tick-color: var(--scheme-background);
-  --input-check-corner-radius: calc(var(--radius) * 0.5);
-  --input-check-cutout-start: var(--cutout-checkmark-start);
-  --input-check-cutout-end: var(--cutout-checkmark-end);
 
-  width: var(--input-check-size);
-  height: var(--input-check-size);
+input[type=checkbox].input-check {
+  --checkbox-checked-bg: var(--scheme-main);
+  --checkbox-checked-hover-bg: var(--scheme-main-hover);
+  --checkbox-size: 1.25em;
+  --checkbox-radius: calc(var(--radius) * 0.5);
+  --checkbox-cutout-start: var(--cutout-checkmark-start);
+  --checkbox-cutout-end: var(--cutout-checkmark-end);
+
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
 
   appearance: none;
 
   position: relative;
   
-  // Check Border
+  // Checkbox replacement
   &::before {
     @include checkbox-pseudo-base;
 
     user-select: none;
 
-    border-color: var(--input-check-color);
-    border-radius: var(--input-check-corner-radius);
+    background-color: var(--checkbox-unchecked-bg);
 
-    clip-path: var(--input-check-cutout-start);
-    transition: var(--transition-duration) clip-path var(--transition-shape-bouncy);
+    clip-path: var(--checkbox-cutout-start);
+    transition: var(--transition-duration) clip-path var(--transition-shape-bouncy),
+                var(--transition-duration) background-color linear;
+
     @media (prefers-reduced-motion) {
       transition: none;
     }
   }
-  &:checked::before {
-    background-color: var(--input-check-color);
-    clip-path: var(--input-check-cutout-end);
-  }
+  // Applying cursor state on a separate element because the negative space inside the clip-path is invisible to the
+  // cursor property leading to the cursor constantly changing
   &::after {
     @include checkbox-pseudo-base;
     cursor: pointer;
  }
+
+  // Checked and hover states
+  &:checked::before {
+    background-color: var(--checkbox-checked-bg);
+    clip-path: var(--checkbox-cutout-end);
+  }
+  &:hover::before {
+    background-color: var(--checkbox-unchecked-hover-bg);
+  }
+  &:checked:hover::before {
+    background-color: var(--checkbox-checked-hover-bg);
+  }
 
   &:focus,
   &:focus-visible {
@@ -57,8 +70,8 @@ input[type=checkbox].input-check {
   }
 
   &:focus-visible::before {
-    outline-offset: var(--input-check-border-width);
-    outline: var(--input-check-border-width) solid var(--input-check-tick-color);
+    outline-offset: var(--border-width);
+    outline: var(--border-width) solid var(--scheme-focus);
   }
 
   & + label {
@@ -66,8 +79,10 @@ input[type=checkbox].input-check {
     cursor: pointer;
   }
 
+  // Variations
+
   &.input-check-cross {
-    --input-check-cutout-start: var(--cutout-cross-start);
-    --input-check-cutout-end: var(--cutout-cross-end);
+    --checkbox-cutout-start: var(--cutout-cross-start);
+    --checkbox-cutout-end: var(--cutout-cross-end);
   }
 }

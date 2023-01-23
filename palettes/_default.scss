@@ -39,4 +39,8 @@
     --btn-text-color: var(--scheme-text-color);
     --btn-outline-text-color: var(--scheme-foreground);
     --btn-focus-outline-color: var(--scheme-focus);
+
+    // Checkbox
+    --checkbox-unchecked-bg: var(--control-bg);
+    --checkbox-unchecked-hover-bg: var(--control-hover-bg);
 }
