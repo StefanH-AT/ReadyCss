@@ -69,7 +69,7 @@ input[type=checkbox].checkbox {
     outline: none;
   }
 
-  &:focus-visible::before {
+  &:focus-visible::after {
     outline-offset: var(--border-width);
     outline: var(--border-width) solid var(--scheme-focus);
   }
