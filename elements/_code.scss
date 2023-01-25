@@ -31,4 +31,9 @@ code {
         word-break: normal;
         overflow-x: auto;
     }
+
+    // Code blocks with scroll overflow are focusable so the keyboard can be used to scroll
+    &:focus {
+        outline: var(--border-width) solid var(--scheme-focus);
+    }
 }
