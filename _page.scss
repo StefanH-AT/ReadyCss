@@ -1,0 +1,25 @@
+
+:root {
+  --page-width-widescreen: min(85rem, 90%);
+  --page-width-reader: min(50rem, 90%);
+}
+
+.page {
+  display: flow-root;
+  margin-inline: auto;
+  width: 100%; // Desired width is 100%, but it is being limited by the max-width
+
+  &.page-widescreen {
+    max-width: var(--page-width-widescreen);
+  }
+
+  &.page-reader {
+    max-width: var(--page-width-reader);
+  }
+
+  &.page-vertically-centered {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+

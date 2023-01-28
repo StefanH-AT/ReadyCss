@@ -18,6 +18,6 @@ jobs:
       - name: Sass Build
         uses: gha-utilities/sass-build@247e848d2ba924ee390e5ddac6c7703ba4f13bcd
         with:
-          source: main.scss
+          source: all.scss
           destination: ready.css
       

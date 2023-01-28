@@ -1,4 +1,4 @@
-// This mixin is made to be applied to both ::before and ::after pseudo-elements for
+// This mixin is made to be applied to both ::before and ::after pseudo-components for
 // correct sizing and placement of the replacement checkbox
 @mixin checkbox-pseudo-base() {
   content: '';

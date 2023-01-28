@@ -1,9 +1,11 @@
-:root {
-    --text-input-padding: calc(var(--spacer) * 0.75);
-}
 
 .text-input,
-textarea.text-input {
+.text-input-shift-wrapper {
+    --text-input-padding: calc(var(--spacer) * 0.75);
+    --text-input-focus-border-color: var(--scheme-main);
+}
+
+.text-input {
     --text-input-min-character-width: 10ch;
     --text-input-border-width: var(--border-width);
     --text-input-border-radius: var(--radius);
