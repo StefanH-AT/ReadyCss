@@ -2,6 +2,9 @@
 :root {
   --page-width-widescreen: min(85rem, 97%);
   --page-width-reader: min(50rem, 97%);
+  
+  --page-margin-widescreen: calc((100% - var(--page-width-widescreen)) * 0.5);
+  --page-margin-reader: calc((100% - var(--page-width-reader)) * 0.5);
 }
 
 .page {
