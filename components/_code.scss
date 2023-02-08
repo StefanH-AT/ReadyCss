@@ -1,7 +1,7 @@
 
 code {    
-    --code-bg: var(--scheme-shade-7);
-    --code-padding: calc(var(--spacer) * 0.25) calc(var(--spacer) * 0.5);
+    --code-bg: var(--scheme-surface-0);
+    --code-padding: var(--space-3xs) var(--space-2xs);
     --code-color: var(--scheme-shade-1);
     --code-border-color: var(--code-bg);
     --code-border-radius: var(--radius);
@@ -13,10 +13,9 @@ code {
     
     padding: var(--code-padding);
     display: inline-block;
-    
-    // Jetbrains recommended settings for jetbrains mono font
-    font-family: var(--font-family-monospace);
-    font-size: 0.9em;
+
+    font-family: var(--ff-mono);
+    font-size: var(--step-0);
 
     pre > & {
         display: block;
@@ -24,16 +23,15 @@ code {
         box-sizing: border-box;
         width: 100%;
         line-height: 1.2;
-        font-size: 16px;
+        font-size: var(--step-0);
 
-        padding: var(--spacer);
-        border-left-width: calc(var(--border-width) * 4);
+        padding: var(--space-xs);
         word-break: normal;
         overflow-x: auto;
     }
 
     // Code blocks with scroll overflow are focusable so the keyboard can be used to scroll
     &:focus {
-        outline: var(--border-width) solid var(--scheme-focus);
+        outline: var(--stroke) solid var(--scheme-focus);
     }
 }

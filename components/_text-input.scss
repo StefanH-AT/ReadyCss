@@ -1,13 +1,13 @@
 
 .text-input,
 .text-input-shift-wrapper {
-    --text-input-padding: calc(var(--spacer) * 0.75);
+    --text-input-padding: var(--space-2xs);
     --text-input-focus-border-color: var(--scheme-main);
 }
 
 .text-input {
     --text-input-min-character-width: 10ch;
-    --text-input-border-width: var(--border-width);
+    --text-input-border-width: var(--stroke);
     --text-input-border-radius: var(--radius);
 
     display: inline-block;
@@ -17,7 +17,7 @@
     background-color: var(--text-input-bg);
     color: var(--text-input-text-color);
     
-    font-size: var(--font-size);
+    font-size: var(--step-0);
     
     border: var(--text-input-border-width) var(--text-input-border-color) solid;
     border-radius: var(--text-input-border-radius);
@@ -76,7 +76,7 @@
 
         content: attr(data-placeholder);
         position: absolute;
-        left: calc(var(--text-input-padding) + var(--border-width) - var(--input-text-shift-label-padding));
+        left: calc(var(--text-input-padding) + var(--stroke) - var(--input-text-shift-label-padding));
 
         z-index: 2;
         pointer-events: none;
@@ -90,15 +90,15 @@
 
     // Input empty
     .text-input:placeholder-shown + label {
-        font-size: var(--font-size);
-        bottom: calc(var(--text-input-padding) + var(--border-width));
+        font-size: var(--step-0);
+        bottom: calc(var(--text-input-padding) + var(--stroke));
         color: var(--text-input-placeholder-color);
         background: transparent;
     }
     // Input filled
     .text-input + label {
-        font-size: calc(var(--font-size) * 0.75);
-        bottom: calc(var(--text-input-padding) * 2 + var(--border-width) * 3 + var(--font-size) * 0.5);
+        font-size: calc(var(--step-0) * 0.75);
+        bottom: calc(var(--text-input-padding) * 2 + var(--stroke) * 3 + var(--step-0) * 0.5);
         color: var(--scheme-middleground);
         background: var(--text-input-bg);
     }

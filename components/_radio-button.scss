@@ -1,6 +1,6 @@
 :root {
-    --input-radio-size: var(--spacer);
-    --input-radio-border-size: calc(var(--border-width) * 2);
+    --input-radio-size: var(--space-xs);
+    --input-radio-border-size: calc(var(--stroke) * 2);
     --input-radio-color: var(--scheme-foreground);
 }
 

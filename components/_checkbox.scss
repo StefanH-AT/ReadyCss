@@ -17,7 +17,7 @@
 input[type=checkbox].checkbox {
   --checkbox-checked-bg: var(--scheme-main);
   --checkbox-checked-hover-bg: var(--scheme-main-hover);
-  --checkbox-size: 1.25em;
+  --checkbox-size: var(--space-s);
   --checkbox-radius: calc(var(--radius) * 0.5);
   --checkbox-cutout-start: var(--cutout-checkmark-start);
   --checkbox-cutout-end: var(--cutout-checkmark-end);
@@ -70,8 +70,8 @@ input[type=checkbox].checkbox {
   }
 
   &:focus-visible::after {
-    outline-offset: var(--border-width);
-    outline: var(--border-width) solid var(--scheme-focus);
+    outline-offset: var(--stroke);
+    outline: var(--stroke) solid var(--scheme-focus);
   }
 
   & + label {
