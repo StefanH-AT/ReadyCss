@@ -1,0 +1,101 @@
+:root {
+  /* Size settings */
+  --switch-height: 2rem;
+  --switch-aspect: 2 / 1;
+  --switch-radius: var(--radius);
+  --switch-font-size: var(--step-0);
+  --switch-focus-outline-width: var(--btn-border-width);
+  --switch-focus-outline-offset: var(--btn-focus-outline-width);
+  --switch-padding-vertical: var(--space-2xs);
+  --switch-padding-horizontal: var(--space-xs);
+  --switch-handle-margin: calc(var(--switch-height) * 0.1);
+  --switch-handle-transform: calc( var(--switch-height) * var(--switch-aspect) - var(--switch-height) );
+}
+
+.switch {
+  appearance: none;
+
+  display: inline-block;
+  position: relative;
+
+  height: var(--switch-height);
+  aspect-ratio: var(--switch-aspect);
+  padding: var(--switch-padding-vertical) var(--switch-padding-horizontal);
+
+  background-color: var(--switch-bg);
+  border-radius: var(--switch-radius);
+
+  vertical-align: middle;
+
+  cursor: pointer;
+
+  transition: background-color var(--transition-duration) linear;
+
+  // Icon
+  &::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+
+    left: var(--switch-handle-margin);
+    top: var(--switch-handle-margin);
+    bottom: var(--switch-handle-margin);
+    aspect-ratio: 1 / 1;
+
+    background-color: var(--switch-handle-bg);
+
+    transition: transform var(--transition-duration) var(--transition-shape-bouncy),
+                background-color var(--transition-duration) linear,
+                clip-path var(--transition-duration-quick) linear;
+
+    transform: translateX( var(--switch-handle-transform) );
+
+    clip-path: var(--clip--polygon-cross);
+  }
+
+  // Handle
+  &::after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+
+    left: var(--switch-handle-margin);
+    top: var(--switch-handle-margin);
+    bottom: var(--switch-handle-margin);
+    aspect-ratio: 1 / 1;
+
+    background-color: var(--switch-handle-bg);
+    border-radius: calc(var(--switch-radius) - var(--switch-handle-margin));
+
+    transition: transform var(--transition-duration) var(--transition-shape-bouncy);
+  }
+}
+
+.switch:checked {
+  background-color: var(--switch-bg-checked);
+
+  // Icon
+  &::before {
+    transform: translateX(0);
+    background-color: var(--switch-handle-bg-checked);
+    clip-path: var(--clip-polygon-check);
+  }
+
+  // Handle
+  &::after {
+    background-color: var(--switch-handle-bg-checked);
+    transform: translateX( var(--switch-handle-transform) );
+  }
+}
+
+.switch + label {
+  margin-inline-start: 1ch;
+  margin-block: initial;
+  user-select: none;
+}
+
+// Modifiers
+
+.switch-round {
+  --switch-radius: 100rem;
+}

@@ -28,6 +28,7 @@
     --scheme-surface-0: var(--palette-default-surface-0);
 
     --control-bg: var(--palette-default-control-bg);
+    --control-surface-1: var(--palette-default-control-surface-1);
     --control-hover-bg: var(--palette-default-control-hover-bg);
     --control-disabled-bg: var(--palette-default-control-disabled-bg);
 
@@ -48,5 +49,11 @@
     --text-input-placeholder-color: var(--scheme-shade-6);
     --text-input-text-color: var(--scheme-text-color);
     --text-input-border-color: var(--control-bg);
+
+    // Switch
+    --switch-bg: var(--control-bg);
+    --switch-bg-checked: var(--scheme-main);
+    --switch-handle-bg: var(--control-surface-1);
+    --switch-handle-bg-checked: var(--scheme-foreground);
 
 }

@@ -32,4 +32,25 @@
           85% 25%, 75% 15%, /* Top right */
           50% 40%, /* Middle top */
           25% 15%, 15% 25%); /* Top left */
+
+  // These polygon paths can be transitioned into and from each other
+  --clip-polygon-cross: polygon(
+                  85% 25%, 75% 15%, /* Top right */
+                  50% 40%, /* Middle top */
+                  25% 15%, 15% 25%, /* Top left */
+                  40% 50%, /* Middle left */
+                  15% 75%, 25% 85%, /* Bottom left */
+                  50% 60%, /* Middle Bottom */
+                  75% 85%, 85% 75%, /* Bottom right */
+                  60% 50%); /* Middle Right */
+
+  --clip-polygon-check: polygon(
+                  90% 30%, 80% 20%, /* Right tick*/
+                  40% 60%, /* Center bottom */
+                  20% 40%, 10% 50%, /* Left tick */
+                  30% 70%,
+                  30% 70%, 40% 80%,
+                  40% 80%,
+                  40% 80%, 50% 70%,
+                  50% 70%); /* Center top */
 }
