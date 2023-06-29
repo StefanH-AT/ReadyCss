@@ -1,7 +1,7 @@
 .btn {
 
     /* Size settings */
-    --btn-border-radius: var(--radius);
+    --btn-radius: var(--radius);
     --btn-font-size: var(--step-0);
     --btn-focus-outline-width: var(--btn-border-width);
     --btn-focus-outline-offset: var(--btn-focus-outline-width);
@@ -12,7 +12,7 @@
     /* Apply colors */
     background: var(--btn-bg);
     color: var(--btn-text-color);
-    border-radius: var(--btn-border-radius);
+    border-radius: var(--btn-radius);
     
     /* Apply styling */
     display: inline-block;
