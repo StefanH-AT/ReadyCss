@@ -61,7 +61,7 @@ h6 {
     font-size: var(--step-0);
 }
 
-p {
+* + p {
     max-width: var(--paragraph-width);
     margin-bottom: var(--space-s);
 }
