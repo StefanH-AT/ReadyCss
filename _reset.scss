@@ -52,3 +52,23 @@ table {
 hr {
   width: 100%;
 }
+a {
+  color: unset;
+}
+img {
+  // Don't overflow
+  max-width: 100%;
+
+  // Keep aspect ratio when "width" and "height" are set
+  height: auto;
+
+  // Remove whitespace under image without relying on display: block
+  vertical-align: middle;
+
+  // Style alt text as italic so it stands out more
+  font-style: italic;
+
+  // For fallback loading background images
+  background-repeat: no-repeat;
+  background-size: cover;
+}
