@@ -24,6 +24,11 @@
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
+// Wrap
+.wrap-balance { text-wrap: balance; }
+.wrap-pretty { text-wrap: pretty; }
+.wrap-stable { text-wrap: stable; }
+
 // Color
 .text-muted { color: var(--scheme-text-muted-color); }
 .text-main { color: var(--scheme-main); }
