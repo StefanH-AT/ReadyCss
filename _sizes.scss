@@ -58,4 +58,6 @@ $spaces: (
     .m-inline-#{nth($space, 1)} { margin-inline: var(--space-#{nth($space, 1)}); }
     .m-inline-start-#{nth($space, 1)} { margin-inline-start: var(--space-#{nth($space, 1)}); }
     .m-inline-end-#{nth($space, 1)} { margin-inline-end: var(--space-#{nth($space, 1)}); }
+
+    .gap-#{nth($space, 1)} { gap: var(--space-#{nth($space, 1)}); }
 }
