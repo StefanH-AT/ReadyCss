@@ -25,3 +25,12 @@ body, .root {
   color-scheme: light;
 }
 
+.bg-background {
+  background: var(--scheme-background);
+}
+.bg-foreground {
+  background: var(--scheme-foreground);
+}
+.bg-surface-0 {
+  background: var(--scheme-surface-0);
+}
