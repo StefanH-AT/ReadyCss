@@ -37,6 +37,7 @@
         outline: none;
         border-color: var(--text-input-focus-border-color);
     }
+
     &:focus::placeholder {
         color: var(--text-input-focus-border-color);
     }
@@ -63,7 +64,6 @@
 }
 
 .text-input-shift-wrapper {
-
     --input-text-shift-animation-duration: calc(var(--transition-duration) * 0.5);
 
     position: relative;
@@ -95,6 +95,7 @@
         color: var(--text-input-placeholder-color);
         background: transparent;
     }
+
     // Input filled
     .text-input + label {
         font-size: calc(var(--step-0) * 0.75);
@@ -102,9 +103,9 @@
         color: var(--scheme-middleground);
         background: var(--text-input-bg);
     }
+
     .text-input:focus + label {
         color: var(--text-input-focus-border-color);
     }
-
 
 }

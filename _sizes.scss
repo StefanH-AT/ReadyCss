@@ -1,4 +1,6 @@
 
+@use "sass:list";
+
 :root {
     --stroke: 2px;
     --radius: 8px;
@@ -36,10 +38,11 @@ $spaces: (
 
 :root {
     @each $space in $spaces {
-        --space-#{nth($space, 1)}: #{nth($space, 2)};
+        --space-#{list.nth($space, 1)}: #{list.nth($space, 2)};
     }
 }
 
+/* stylelint-disable custom-property-pattern */
 @each $space in $spaces {
     // Padding
     .p-block-#{nth($space, 1)} { padding-block: var(--space-#{nth($space, 1)}); }
@@ -61,3 +64,4 @@ $spaces: (
 
     .gap-#{nth($space, 1)} { gap: var(--space-#{nth($space, 1)}); }
 }
+/* stylelint-enable custom-property-pattern */

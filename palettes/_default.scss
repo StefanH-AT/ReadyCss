@@ -1,6 +1,6 @@
 @mixin palette-default() {
 
-    --scheme-focus: hsl(30, 100%, 50%);
+    --scheme-focus: hsl(30deg 100% 50%);
 
     // Colors definitions
     --scheme-main: var(--palette-default-main);
