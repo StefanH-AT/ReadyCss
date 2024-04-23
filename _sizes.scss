@@ -65,3 +65,8 @@ $spaces: (
     .gap-#{nth($space, 1)} { gap: var(--space-#{nth($space, 1)}); }
 }
 /* stylelint-enable custom-property-pattern */
+
+.m-block-start-auto { margin-block-start: auto; }
+.m-block-end-auto { margin-block-end: auto; }
+.m-inline-start-auto { margin-inline-start: auto; }
+.m-inline-end-auto { margin-inline-end: auto; }
