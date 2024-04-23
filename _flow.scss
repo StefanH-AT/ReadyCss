@@ -1,0 +1,37 @@
+:root {
+  --flow-width-reader: 50rem;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns:
+      [full-start]
+      1fr
+      [wide-start]
+      minmax(var(--flow-gutter, 1rem), 2fr)
+      [reader-start]
+      minmax(10%, var(--flow-width-reader))
+      [reader-end]
+      minmax(var(--flow-gutter, 1rem), 2fr)
+      [wide-end]
+      1fr
+      [full-end];
+
+  // Don't try to fill all the space evenly in case
+  // this element gets set a min height somewhere else
+  align-content: start;
+
+  > .flow-full {
+    grid-column: full;
+  }
+
+  > .flow-wide {
+    grid-column: wide;
+  }
+
+  > *,
+  > .flow-reader {
+    grid-column: reader;
+  }
+}
+

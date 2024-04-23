@@ -7,7 +7,9 @@
 @use "hljs";
 
 @use "layout";
-@use "page";
+@use "page"; // TODO(page): DEPRECATED! Use flow
+@use "flow";
+
 @use "animation";
 @use "sizes";
 @use "colors";
