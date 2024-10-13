@@ -57,4 +57,9 @@
     --switch-handle-bg: var(--control-surface-1);
     --switch-handle-bg-checked: var(--scheme-foreground);
 
+    // Select
+    --select-bg: var(--control-bg);
+    --select-text-color: var(--scheme-text-color);
+    --select-border-color: var(--scheme-shade-8);
+
 }

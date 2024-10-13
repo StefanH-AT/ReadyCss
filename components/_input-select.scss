@@ -1,0 +1,46 @@
+.input-select {
+  appearance: none;
+  background: transparent;
+  border: none;
+
+  cursor: inherit;
+  color: inherit;
+  font: inherit;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: var(--stroke) solid var(--scheme-focus);
+  }
+
+}
+
+.input-select-wrapper {
+
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: var(--space-3xs);
+
+  background: var(--select-bg);
+  color: var(--select-text-color);
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--stroke) solid var(--select-border-color);
+
+  font-size: var(--step-0);
+  border-radius: var(--radius);
+
+  cursor: pointer;
+
+  &::after {
+    display: inline-block;
+    content: "";
+    background: var(--select-text-color);
+    width: 0.75em;
+    height: 0.5em;
+
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+}
