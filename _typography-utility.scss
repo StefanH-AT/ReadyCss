@@ -45,3 +45,16 @@
 .text-bg { color: var(--scheme-background); }
 .text-fg { color: var(--scheme-foreground); }
 .text-surface-0 { color: var(--scheme-surface-0); }
+
+a.link,
+.link a {
+  color: var(--scheme-main);
+
+  &:hover {
+    color: var(--scheme-main-hover);
+  }
+
+  &:focus-visible {
+    outline: var(--stroke) var(--scheme-focus) solid;
+  }
+}
