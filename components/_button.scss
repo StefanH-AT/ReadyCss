@@ -5,8 +5,9 @@
     --btn-font-size: var(--step-0);
     --btn-focus-outline-width: var(--stroke);
     --btn-focus-outline-offset: var(--btn-focus-outline-width);
-    --btn-padding-vertical: var(--space-2xs);
-    --btn-padding-horizontal: var(--space-xs);
+    --btn-padding-vertical: var(--space-3xs);
+    --btn-padding-horizontal: var(--space-2xs);
+    --btn-border-color: transparent;
     --btn-press-dip: 2px;
 
     /* Apply colors */
@@ -15,9 +16,12 @@
     border-radius: var(--btn-radius);
     
     /* Apply styling */
-    display: inline-block;
+    display: inline-flex;
+    gap: var(--space-2xs);
+    justify-content: center;
+    align-items: center;
     position: relative;
-    border: none;
+    border: var(--btn-border-color) var(--stroke) solid;
     padding: var(--btn-padding-vertical) var(--btn-padding-horizontal);
     margin: calc(var(--btn-border-width) * 2);
     cursor: pointer;
@@ -84,6 +88,12 @@
         --btn-hover-bg: transparent;
     }
 
+    &.btn-outline {
+        --btn-bg: var(--scheme-shade-7);
+        --btn-border-color: var(--scheme-shade-9);
+        --btn-hover-bg: var(--scheme-shade-6);
+    }
+
 }
 
 .btn-group {
@@ -118,4 +128,9 @@
         z-index: 2;
         outline-offset: 0;
     }
+}
+
+.btn-icon {
+    width: 1.2em;
+    height: 1.2em;
 }
