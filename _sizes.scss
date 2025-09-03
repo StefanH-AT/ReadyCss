@@ -45,24 +45,24 @@ $spaces: (
 /* stylelint-disable custom-property-pattern */
 @each $space in $spaces {
     // Padding
-    .p-block-#{nth($space, 1)} { padding-block: var(--space-#{nth($space, 1)}); }
-    .p-block-start-#{nth($space, 1)} { padding-block-start: var(--space-#{nth($space, 1)}); }
-    .p-block-end-#{nth($space, 1)} { padding-block-end: var(--space-#{nth($space, 1)}); }
+    .p-block-#{list.nth($space, 1)} { padding-block: var(--space-#{list.nth($space, 1)}); }
+    .p-block-start-#{list.nth($space, 1)} { padding-block-start: var(--space-#{list.nth($space, 1)}); }
+    .p-block-end-#{list.nth($space, 1)} { padding-block-end: var(--space-#{list.nth($space, 1)}); }
 
-    .p-inline-#{nth($space, 1)} { padding-inline: var(--space-#{nth($space, 1)}); }
-    .p-inline-start-#{nth($space, 1)} { padding-inline-start: var(--space-#{nth($space, 1)}); }
-    .p-inline-end-#{nth($space, 1)} { padding-inline-end: var(--space-#{nth($space, 1)}); }
+    .p-inline-#{list.nth($space, 1)} { padding-inline: var(--space-#{list.nth($space, 1)}); }
+    .p-inline-start-#{list.nth($space, 1)} { padding-inline-start: var(--space-#{list.nth($space, 1)}); }
+    .p-inline-end-#{list.nth($space, 1)} { padding-inline-end: var(--space-#{list.nth($space, 1)}); }
 
     // Margin
-    .m-block-#{nth($space, 1)} { margin-block: var(--space-#{nth($space, 1)}); }
-    .m-block-start-#{nth($space, 1)} { margin-block-start: var(--space-#{nth($space, 1)}); }
-    .m-block-end-#{nth($space, 1)} { margin-block-end: var(--space-#{nth($space, 1)}); }
+    .m-block-#{list.nth($space, 1)} { margin-block: var(--space-#{list.nth($space, 1)}); }
+    .m-block-start-#{list.nth($space, 1)} { margin-block-start: var(--space-#{list.nth($space, 1)}); }
+    .m-block-end-#{list.nth($space, 1)} { margin-block-end: var(--space-#{list.nth($space, 1)}); }
 
-    .m-inline-#{nth($space, 1)} { margin-inline: var(--space-#{nth($space, 1)}); }
-    .m-inline-start-#{nth($space, 1)} { margin-inline-start: var(--space-#{nth($space, 1)}); }
-    .m-inline-end-#{nth($space, 1)} { margin-inline-end: var(--space-#{nth($space, 1)}); }
+    .m-inline-#{list.nth($space, 1)} { margin-inline: var(--space-#{list.nth($space, 1)}); }
+    .m-inline-start-#{list.nth($space, 1)} { margin-inline-start: var(--space-#{list.nth($space, 1)}); }
+    .m-inline-end-#{list.nth($space, 1)} { margin-inline-end: var(--space-#{list.nth($space, 1)}); }
 
-    .gap-#{nth($space, 1)} { gap: var(--space-#{nth($space, 1)}); }
+    .gap-#{list.nth($space, 1)} { gap: var(--space-#{list.nth($space, 1)}); }
 }
 /* stylelint-enable custom-property-pattern */
 
